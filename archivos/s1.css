@@ -1,0 +1,19 @@
+h1 {
+    color: rgb(29, 224, 198);
+    background-color: bisque;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: color 0.5s, background-color 0.3s;
+}
+
+h2.titulo2{
+    background-color: blue;
+}
+
+.enlace.uno{
+    background-color: brown;
+}
+
+/* Comentarios */
