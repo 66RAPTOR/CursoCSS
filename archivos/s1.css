@@ -1,19 +1,96 @@
+body {
+    /*background: linear-gradient(90deg,
+            rgba(40, 55, 71, 1) 16%,
+            rgba(52, 73, 94, 1) 57%,
+            rgba(93, 109, 126, 1) 80%,
+            rgba(174, 182, 191, 0.88) 96%);*/
+    
+            background: #ffffff url('/img/compu.jpg') 
+            no-repeat center center; 
+        
+
 h1 {
-    color: rgb(29, 224, 198);
+    color: rgb(230, 160, 11);
     background-color: bisque;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: color 0.5s, background-color 0.3s;
+    transition: color 4.0s, background-color 0.3s;
 }
 
-h2.titulo2{
-    background-color: blue;
-}
 
-.enlace.uno{
-    background-color: brown;
+.seccion1 {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 20px;
+    
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
 }
 
 /* Comentarios */
+
+/*
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 20px;
+  }
+    */
+
+
+    @charset "utf-8";
+    .tarjeta{
+         display:flex;
+         flex-direction:column;
+         justify-content:space-between;
+         width:420px;
+         border: 1px solid lightgray;
+         box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+         border-radius:15px;
+         font-family: sans-serif;
+    }
+    .titulo{
+         font-size: 24px;
+         padding: 10px 10px 0 10px;;
+    }
+    .cuerpo{
+         padding: 10px;
+        }
+    .pie{
+         background: #c9700b;
+         border-radius:0 0 15px 15px;
+         padding: 10px;
+         text-align:center;
+    }
+    .pie a{
+         text-decoration: none;
+         color: white;
+        }
+    .pie a:after {
+         position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         z-index: 1;
+         content: ""
+        }
+.imagen{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 10px;
+    
+}
