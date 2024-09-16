@@ -5,8 +5,8 @@ body {
             rgba(93, 109, 126, 1) 80%,
             rgba(174, 182, 191, 0.88) 96%);*/
     
-            background: #ffffff url('/img/compu.jpg') 
-            no-repeat center center; 
+            background: #ffffff url('/img/arbol-solitario.jpg') 
+            no-repeat center center /cover fixed; 
 }      
 
 h1 {
@@ -31,22 +31,14 @@ h1 {
     
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
+    width: 96%;
 }
 
 /* Comentarios */
 
-/*
-.glass-effect {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    padding: 20px;
-  }
-    */
+
+
+    
 
 
     @charset "utf-8";
