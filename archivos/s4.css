@@ -1,0 +1,25 @@
+*{
+    background-color: black;
+}
+
+.caja1{
+    min-height: 200px;
+    max-height: 300px;
+    width: 60%;
+    background: hsl(0, 100%, 65%);
+    border-radius: 6%;
+    border: 2px solid black;
+    margin: 6px;
+    
+}
+
+.caja2{
+    min-width: 200px;
+    width: 50%;
+    background: hsl(115, 74%, 43%);
+    border-radius: 6%;
+    border: 6px solid black;
+    margin: 40px;
+    
+}
+

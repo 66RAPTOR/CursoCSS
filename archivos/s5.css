@@ -1,0 +1,66 @@
+h1 {
+    color: red;
+    text-align: center;
+    text-shadow: 2px 2px 25px rgba(146, 248, 120, 0.8) , 2px 2px 25px rgba(240, 36, 80, 0.568) ;
+}
+
+h2 {
+    color: rgb(14, 71, 52);
+    text-align:star;
+}
+
+.overline {
+
+    /* text-decoration: overline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(35, 94, 94); */
+
+    text-decoration: overline red wavy 10px
+}
+
+.line-thtough{
+    text-decoration: line-through;
+    text-decoration-style: dotted;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: rgb(10, 54, 54);
+    text-decoration-style: wavy;
+}
+
+.texto1 {
+    color:rgb(0, 0, 0);
+    text-align: start;
+    text-transform: capitalize;
+    text-indent: 10px;
+    letter-spacing: 1px;
+    line-height: 14px;
+    word-spacing: 10px;
+    /* white-space: nowrap; */
+}
+
+.texto2 {
+    font-size: 18px;
+    
+}
+
+.fuente1 {    
+    font-size: 20vw
+}
+
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+  }
+
+ 
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }

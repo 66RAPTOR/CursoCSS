@@ -1,12 +1,48 @@
 p.dotted {
     border-style: dotted;
+    border-color: red;
+    border-width: 5px;
 }
 
 p.dashed  {
-    border-style: dashed ;
+    border:2px dashed red;
 }
 
 p.solid {
     border-style: solid;
 }
+
+p.double {
+    border-style: double;
+}
+
+p.groove {
+    border-style: groove;
+}
+
+p.ridge {
+    border-style: ridge;
+}
+
+p.inset {
+    border-style: inset;
+}
+
+p.outset {
+    border-style: outset;
+    border-radius: 5px;
+}
+
+p.none {
+    border-style: none;
+}
+
+p.hidden {
+    border-style: hidden;
+}
+
+p.mix {
+    border-style: dotted DASHED GROOVE RIDGE;
+}
+
 
