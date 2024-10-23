@@ -1,0 +1,43 @@
+.caja1{
+  height: 200px;
+  background-color: rgb(5, 207, 207);
+  border:  1px solid black;
+  display: inline;
+
+
+}
+.caja2{
+  height: 200px;
+  background-color: rgb(5, 207, 55);
+  border:  1px solid black;
+  display: block;
+}
+.caja3{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(219, 157, 42);
+  border:  1px solid black;
+
+}
+.box1{
+  height: 200px;
+  background-color: rgb(213, 42, 219);
+  border:  1px solid black;
+  display: block;
+  visibility: hidden;
+
+}
+.box2{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(135, 34, 148);
+  border:  1px solid black;
+  display: none;
+}
+.box3{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(228, 125, 248);
+  border:  1px solid black;
+  
+}
