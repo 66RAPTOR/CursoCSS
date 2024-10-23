@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Arial', sans-serif;
+  margin: 20px 0;
+  
+  /* Borde alrededor de la tabla */
+  border: 5px solid #4a6a41; /* Borde grueso verde oscuro */
+  border-radius: 10px; /* Bordes redondeados para suavizar la tabla */
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Estilo para el encabezado */
+th {
+  background-color: #4a6a41; /* Verde oscuro inspirado en la naturaleza */
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* Estilo para filas alternas */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fondo claro para filas pares */
+}
+
+tr:nth-child(odd) {
+  background-color: #e3f2d9; /* Fondo verde claro inspirado en la naturaleza */
+}
+
+/* Efecto al pasar el mouse */
+tr:hover {
+  background-color: #c7e6a3; /* Verde suave al pasar el ratón */
+}
+
+/* Estilo para celdas */
+td {
+  border-bottom: 1px solid #dddddd; /* Borde inferior suave */
+  color: #333;
+}
+
+/* Estilo para una columna específica (ej. "Especie") */
+td:nth-child(4) {
+  font-style: italic; /* Añade cursiva para la columna 'Especie' */
+  color: #5d4037; /* Marrón, evocando tierra */
+}
+
+/* Ajuste de fuentes */
+th, td {
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+}

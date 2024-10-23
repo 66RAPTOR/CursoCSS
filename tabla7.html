@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Estilizada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Contenedor de la tabla */
+    section {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #ffffff;
+      overflow-x: auto;
+    }
+
+    /* Estilo de la tabla */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      min-width: 600px;
+    }
+
+    /* Bordes suaves alrededor de la tabla */
+    table {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    
+
+    /* Estilo del encabezado de la tabla */
+    th {
+      background-color: #343a40;
+      color: white;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #ff0000;
+    }
+
+    /* Estilo de las celdas de la tabla */
+    td {
+      border-bottom: 1px solid #e0e6de;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    /* Filas alternas con color de fondo */
+    tr:nth-child(even) {
+      background-color: #f1f3f5;
+    }
+
+    /* Efecto de hover para todas las filas */
+    tr:hover {
+      background-color: #96ebfa;
+      transition: 1s;
+    }
+
+    /* Alineación y tipografía moderna */
+    td, th {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+    }
+
+    /* Estilo para la imagen */
+    .image-cell img {
+      width: 80px; /* Ancho de la imagen */
+      height: 80px; /* Alto de la imagen */
+      border-radius: 50%; /* Bordes redondeados para hacerla circular */
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+      th, td {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      th, td {
+        padding: 6px;
+        font-size: 10px;
+      }
+
+      table {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+        <th>Especie</th>
+        <th>Color Favorito</th>
+        <th>Descripción Personal</th>
+        <th>Imagen</th> <!-- Nueva columna -->
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>25</td>
+        <td>Madrid</td>
+        <td>Lobo</td>
+        <td>Gris</td>
+        <td>Amante de la naturaleza y explorador de montañas. Disfruta del aire libre y la tranquilidad que ofrece el paisaje rural.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de Juan"></td> <!-- Imagen de ejemplo -->
+      </tr>
+      <tr>
+        <td>María</td>
+        <td>30</td>
+        <td>Barcelona</td>
+        <td>Águila</td>
+        <td>Blanco</td>
+        <td>Apasionada por la fotografía de aves y los viajes. Sueña con capturar imágenes únicas de la fauna en su hábitat natural.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de María"></td> <!-- Imagen de ejemplo -->
+      </tr>
+      <tr>
+        <td>Carlos</td>
+        <td>35</td>
+        <td>Sevilla</td>
+        <td>Tigre</td>
+        <td>Naranja</td>
+        <td>Diseñador gráfico con una inclinación por los patrones geométricos. Le encanta fusionar colores brillantes y formas abstractas.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de Carlos"></td> <!-- Imagen de ejemplo -->
+      </tr>
+      <tr>
+        <td>Sofía</td>
+        <td>28</td>
+        <td>Valencia</td>
+        <td>León</td>
+        <td>Dorado</td>
+        <td>Profesora de yoga que cree en el equilibrio entre mente y cuerpo. Se dedica a ayudar a las personas a encontrar paz interior.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de Sofía"></td> <!-- Imagen de ejemplo -->
+      </tr>
+      <tr>
+        <td>Sofía</td>
+        <td>28</td>
+        <td>Valencia</td>
+        <td>León</td>
+        <td>Dorado</td>
+        <td>Profesora de yoga que cree en el equilibrio entre mente y cuerpo. Se dedica a ayudar a las personas a encontrar paz interior.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de Sofía"></td> <!-- Imagen de ejemplo -->
+      </tr>
+      <tr>
+        <td>Sofía</td>
+        <td>28</td>
+        <td>Valencia</td>
+        <td>León</td>
+        <td>Dorado</td>
+        <td>Profesora de yoga que cree en el equilibrio entre mente y cuerpo. Se dedica a ayudar a las personas a encontrar paz interior.</td>
+        <td class="image-cell"><img src="img/perfil.jpeg" alt="Imagen de Sofía"></td> <!-- Imagen de ejemplo -->
+      </tr>
+    </table>
+  </section>
+</body>
+</html>
