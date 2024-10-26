@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Position Relative - Conceptos Básicos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .example-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        /* Ejemplo 1: Movimiento básico */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 10px;
+            display: inline-block;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .box-moved {
+            position: relative;
+            left: 50px;
+            top: 20px;
+            background-color: #e74c3c;
+            transition: 0.2s;
+        }
+
+        .box-moved:hover {
+            position: relative;
+            left: 50px;
+            top: 50px;
+            background-color: #e74c3c;
+            transition: 0.5s;
+
+        }
+
+        /* Ejemplo 2: Texto con etiqueta */
+        .text-container {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .tag {
+            position: relative;
+            top: -10px;
+            background-color: #2ecc71;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        /* Ejemplo 3: Imagen con descripción */
+        .image-container {
+            width: 200px;
+            height: 150px;
+            background-color: #9b59b6;
+            margin: 20px;
+            position: relative;
+        }
+
+        .image-text {
+            position: relative;
+            top: 20px;
+            left: 1px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ejemplo 1: Movimiento básico -->
+    <div class="example-container">
+        <h3>Ejemplo 1: Movimiento básico</h3>
+        <div class="box">Normal</div>
+        <div class="box">Normal</div>
+        <div class="box box-moved">Movido</div>
+    </div>
+
+    <!-- Ejemplo 2: Texto con etiqueta -->
+    <div class="example-container">
+        <h3>Ejemplo 2: Texto con etiqueta</h3>
+        <div class="text-container">
+            <span class="tag">Nuevo</span>
+            <p>Este es un texto de ejemplo para mostrar cómo una etiqueta puede posicionarse relativamente.</p>
+        </div>
+    </div>
+
+    <!-- Ejemplo 3: Imagen con descripción -->
+    <div class="example-container">
+        <h3>Ejemplo 3: Imagen con descripción</h3>
+        <div class="image-container">
+            <span class="image-text">Descripción de imagen</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Casos Avanzados de Position Relative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Caso 1: Menú desplegable personalizado */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .dropdown-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Caso 2: Tarjeta con elementos superpuestos */
+        .card-container {
+            position: relative;
+            width: 300px;
+            margin: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card-tag {
+            position: relative;
+            top: -12px;
+            left: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            width: fit-content;
+        }
+
+        .card-image {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: #3498db;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .card-date {
+            position: relative;
+            float: right;
+            top: -30px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* Caso 3: Formulario con validación visual */
+        .form-group {
+            position: relative;
+            margin: 20px;
+            max-width: 300px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .validation-icon {
+            position: relative;
+            top: -30px;
+            left: calc(100% - 30px);
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* Caso 4: Timeline vertical */
+        .timeline {
+            position: relative;
+            max-width: 300px;
+            margin: 40px 20px;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #3498db;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        /* Caso 5: Menú de navegación con indicador */
+        .nav {
+            background: white;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            position: relative;
+        }
+
+        .nav-item {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .nav-indicator {
+            position: relative;
+            top: -2px;
+            left: 22px;
+            width: 6px;
+            height: 6px;
+            background: #e74c3c;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Caso 1: Menú desplegable personalizado -->
+        <div class="dropdown">
+            <button class="dropdown-btn">Menú Desplegable</button>
+            <div class="dropdown-content">
+                <a href="#">Opción 1</a>
+                <a href="#">Opción 2</a>
+                <a href="#">Opción 3</a>
+            </div>
+        </div>
+
+        <!-- Caso 2: Tarjeta con elementos superpuestos -->
+        <div class="card-container">
+            <div class="card">
+                <div class="card-tag">DESTACADO</div>
+                <div class="card-image">
+                    <div class="card-date">24 Oct 2024</div>
+                </div>
+                <h3>Título de la tarjeta</h3>
+                <p>Contenido de ejemplo para la tarjeta...</p>
+            </div>
+        </div>
+
+        <!-- Caso 3: Formulario con validación visual -->
+        <div class="form-group">
+            <input type="email" class="form-input" placeholder="Email">
+            <span class="validation-icon">✓</span>
+        </div>
+
+        <!-- Caso 4: Timeline vertical -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h4>Evento 1</h4>
+                <p>Descripción del evento 1...</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h4>Evento 2</h4>
+                <p>Descripción del evento 2...</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h4>Evento 3</h4>
+                <p>Descripción del evento 3...</p>
+            </div>
+        </div>
+
+        <!-- Caso 5: Menú de navegación con indicador -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    Inicio
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item">Productos</li>
+                <li class="nav-item">Servicios</li>
+                <li class="nav-item">Contacto</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

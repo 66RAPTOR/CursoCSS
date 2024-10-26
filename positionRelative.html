@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Position Relative</title>
+    <style>
+        /* Estilos generales para contenedores */
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #d3d0d0;
+            border: 2px solid #ff0000;
+        }
+
+        /* Cajas base */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Ejemplo 1: Movimiento simple */
+        .box-moved {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: #e74c3c;
+        }
+
+        /* Ejemplo 2: Movimiento negativo */
+        .box-negative {
+            position: relative;
+            top: -20px;
+            left: -20px;
+            background-color: #2ecc71;
+        }
+
+        /* Ejemplo 3: Z-index */
+        .box-stack {
+            position: relative;
+        }
+
+        .box-overlap {
+            position: relative;
+            margin-left: -50px;
+            background-color: #9b59b6;
+            z-index: 1;
+        }
+
+        /* Ejemplo 4: Texto relativo */
+        .text-container {
+            position: relative;
+            height: 150px;
+            background-color: #fff;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .floating-text {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 18px;
+            width: fit-content;
+        }
+
+        /* Ejemplo 5: Indicador de nuevo */
+        .card {
+            position: relative;
+            width: 200px;
+            height: 120px;
+            background-color: white;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .new-badge {
+            position: relative;
+            top: -10px;
+            left: 150px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Ejemplo 1: Movimiento simple -->
+        <h3>Ejemplo 1: Movimiento simple</h3>
+        <div class="box">Normal</div>
+        <div class="box box-moved">Movido</div>
+
+        <!-- Ejemplo 2: Movimiento negativo -->
+        <h3>Ejemplo 2: Movimiento negativo</h3>
+        <div class="box">Normal</div>
+        <div class="box box-negative">Negativo</div>
+
+        <!-- Ejemplo 3: Z-index -->
+        <h3>Ejemplo 3: Superposición</h3>
+        <div class="box box-stack">Base</div>
+        <div class="box box-overlap">Encima</div>
+
+        <!-- Ejemplo 4: Texto centrado -->
+        <h3>Ejemplo 4: Texto centrado</h3>
+        <div class="text-container">
+            <div class="floating-text">Texto Centrado</div>
+        </div>
+
+        <!-- Ejemplo 5: Indicador de nuevo -->
+        <h3>Ejemplo 5: Badge indicador</h3>
+        <div class="card">
+            <div class="new-badge">NUEVO</div>
+            <p>Contenido de la tarjeta</p>
+        </div>
+    </div>
+</body>
+</html>
