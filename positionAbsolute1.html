@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Position Absolute - Conceptos Básicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .example-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        /* Ejemplo 1: Absoluto respecto al body */
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        /* Ejemplo 2: Absoluto respecto a un contenedor relativo */
+        .relative-container {
+            position: relative; /* ¡Importante! */
+            height: 200px;
+            background-color: #3498db;
+            margin: 20px;
+            padding: 10px;
+            color: white;
+        }
+
+        .absolute-child {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2ecc71;
+            padding: 10px;
+        }
+
+        /* Ejemplo 3: Superposición de elementos */
+        .card {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            background-color: white;
+            margin: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        /* Ejemplo 4: Menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .dropdown-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ejemplo 1: Absoluto respecto al body -->
+    <div class="example-container">
+        <h3>Ejemplo 1: Absoluto respecto al body</h3>
+        <div class="absolute-box">Absoluto</div>
+        <p>Este elemento rojo está posicionado respecto al body.</p>
+    </div>
+
+    <!-- Ejemplo 2: Absoluto respecto a un contenedor relativo -->
+    <div class="example-container">
+        <h3>Ejemplo 2: Absoluto respecto a contenedor relativo</h3>
+        <div class="relative-container">
+            Contenedor con position: relative
+            <div class="absolute-child">
+                Hijo absoluto
+            </div>
+        </div>
+    </div>
+
+    <!-- Ejemplo 3: Superposición de elementos -->
+    <div class="example-container">
+        <h3>Ejemplo 3: Superposición de elementos</h3>
+        <div class="card">
+            <div class="badge">1</div>
+            <p>Contenido de la tarjeta</p>
+        </div>
+    </div>
+
+    <!-- Ejemplo 4: Menú desplegable -->
+    <div class="example-container">
+        <h3>Ejemplo 4: Menú desplegable</h3>
+        <div class="dropdown">
+            <button class="dropdown-button">Menú</button>
+            <div class="dropdown-content">
+                <a href="#">Opción 1</a>
+                <a href="#">Opción 2</a>
+                <a href="#">Opción 3</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
