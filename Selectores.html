@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(168, 175, 175);
+        }
+
+        div>span>p {
+            color: rgb(25, 25, 189);
+        }
+
+        h2+p {
+            color: aqua;
+        }
+
+        div>span>h1 {
+            color: brown;
+        }
+
+        .boton[href^="https://ejemplo.com"] {
+            background-color: rgb(243, 191, 143);
+        }
+
+        *[class^="boton"] {
+            background-color: rgb(243, 191, 143);
+            color: white;
+        }
+
+        div[class="uno"] {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>
+            <h1>h1</h1>
+            <p>hola</p>
+            <p>hola</p>
+            <h1>h1</h1>
+        </span>
+    </div>
+    <div>
+        <h2>Título principal h2</h2>
+        <p>Este es el primer párrafo.</p>
+        <p>Este es el segundo párrafo.</p>
+        <p>Este es el tercero párrafo.</p>
+        <p>Este es el cuarto párrafo.</p>
+        <h3>hola h3</h3>
+        <p>Este es el quinto párrafo.</p>
+        <p>Este es el quinto párrafo.</p>
+        <h4>hola</h4>
+        <p>Este es el quinto párrafo.</p>
+
+
+        <div>Un div dentro del div principal</div>
+
+
+    </div>
+
+    <div>
+        <p>Este es el primer párrafo.</p>
+        <p>Este es el segundo párrafo.</p>
+        <p>Este es el tercer párrafo.</p>
+    </div>
+
+    <div>
+        <p>Este es un párrafo.</p>
+        <span>Este es un span.</span>
+        <div>
+            <p>Este párrafo está anidado.</p>
+        </div>
+    </div>
+
+    <a href="https://ejemplo.com" class="boton">Click aquí</a>
+    <a href="https://otrapagina.com" class="boton">Otro enlace</a>
+    <div class="uno">
+        <p>sds</p>
+
+    </div>
+</body>
+
+</html>
