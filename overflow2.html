@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de FAQ con posición sticky</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #991212;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .submenu li {
+      padding: 0;
+    }
+
+    .submenu li a {
+      padding: 5px 20px;
+    }
+
+    /* Mostrar el submenú al pasar el ratón */
+    nav li:hover .submenu {
+      max-height: 200px;
+      /* Ajusta esta altura según tus necesidades */
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">Opción 1</a>
+        <ul class="submenu">
+          <li><a href="#">Subopción 1</a></li>
+          <li><a href="#">Subopción 2</a></li>
+          <li><a href="#">Subopción 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>

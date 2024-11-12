@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-top: 60px; /* Espacio para el header fijo */
+      padding-bottom: 60px; /* Espacio para el footer fijo */
+    }
+
+    /* Header Fijo */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    /* Botón de "Volver arriba" */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Chat flotante */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Footer Fijo */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Contenido de ejemplo para hacer scroll */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .box {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 60px; /* Por encima del footer */
+      left: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      border-top: 1px solid #dee2e6;
+    }
+
+    .cookie-banner button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header fijo -->
+  <header class="header">
+    📱 Mi Aplicación
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <h1>Position: Fixed - Ejemplos Prácticos</h1>
+    
+    <!-- Boxes para generar scroll -->
+    <div class="box">
+      <h2>¿Qué es position: fixed?</h2>
+      <p>Position: fixed mantiene un elemento en una posición fija en la ventana del navegador, incluso cuando se hace scroll.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 1: Headers Fijos</h2>
+      <p>Los headers fijos son muy comunes en sitios web modernos. Permiten acceso constante a la navegación.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 2: Botones de "Volver arriba"</h2>
+      <p>Útiles en páginas largas para volver al inicio fácilmente.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 3: Widgets de Chat</h2>
+      <p>Los botones de chat flotantes permiten acceso rápido al soporte.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 4: Cookie Banners</h2>
+      <p>Los avisos de cookies suelen estar fijos en la parte inferior.</p>
+    </div>
+
+    <!-- Más boxes para generar scroll -->
+    <div class="box">
+      <h2>Contenido Adicional</h2>
+      <p>Este contenido existe para que puedas hacer scroll y ver cómo funcionan los elementos fijos.</p>
+    </div>
+    <div class="box">
+      <p>Sigue haciendo<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-top: 60px; /* Espacio para el header fijo */
+      padding-bottom: 60px; /* Espacio para el footer fijo */
+    }
+
+    /* Header Fijo */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    /* Botón de "Volver arriba" */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Chat flotante */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Footer Fijo */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Contenido de ejemplo para hacer scroll */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .box {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 60px; /* Por encima del footer */
+      left: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      border-top: 1px solid #dee2e6;
+    }
+
+    .cookie-banner button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header fijo -->
+  <header class="header">
+    📱 Mi Aplicación
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <h1>Position: Fixed - Ejemplos Prácticos</h1>
+    
+    <!-- Boxes para generar scroll -->
+    <div class="box">
+      <h2>¿Qué es position: fixed?</h2>
+      <p>Position: fixed mantiene un elemento en una posición fija en la ventana del navegador, incluso cuando se hace scroll.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 1: Headers Fijos</h2>
+      <p>Los headers fijos son muy comunes en sitios web modernos. Permiten acceso constante a la navegación.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 2: Botones de "Volver arriba"</h2>
+      <p>Útiles en páginas largas para volver al inicio fácilmente.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 3: Widgets de Chat</h2>
+      <p>Los botones de chat flotantes permiten acceso rápido al soporte.</p>
+    </div>
+
+    <div class="box">
+      <h2>Caso de uso 4: Cookie Banners</h2>
+      <p>Los avisos de cookies suelen estar fijos en la parte inferior.</p>
+    </div>
+
+    <!-- Más boxes para generar scroll -->
+    <div class="box">
+      <h2>Contenido Adicional</h2>
+      <p>Este contenido existe para que puedas hacer scroll y ver cómo funcionan los elementos fijos.</p>
+    </div>
+    <div class="box">
+      <p>Sigue haciendo scroll para ver cómo los elementos fixed permanecen en su lugar.</p>
+    </div>
+    <div class="box">
+      <p>Los elementos con position: fixed siempre mantienen su posición respecto a la ventana del navegador.</p>
+    </div>
+  </div>
+
+  <!-- Elementos fixed -->
+  <div class="back-to-top">
+    ⬆️ Volver arriba
+  </div>
+
+  <div class="chat-widget">
+    💬
+  </div>
+
+  <div class="cookie-banner">
+    🍪 Este sitio usa cookies para mejorar tu experiencia
+    <button>Aceptar</button>
+  </div>
+
+  <footer class="footer">
+    © 2024 Mi Aplicación - Todos los derechos reservados
+  </footer>
+</body>
+</html>
+    <div class="box">
+      <p>Los elementos con position: fixed siempre mantienen su posición respecto a la ventana del navegador.</p>
+    </div>
+  </div>
+
+  <!-- Elementos fixed -->
+  <div class="back-to-top">
+    ⬆️ Volver arriba
+  </div>
+
+  <div class="chat-widget">
+    💬
+  </div>
+
+  <div class="cookie-banner">
+    🍪 Este sitio usa cookies para mejorar tu experiencia
+    <button>Aceptar</button>
+  </div>
+
+  <footer class="footer">
+    © 2024 Mi Aplicación - Todos los derechos reservados
+  </footer>
+</body>
+</html>
