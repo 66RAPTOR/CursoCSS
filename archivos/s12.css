@@ -1,0 +1,125 @@
+.titulo-decorado {
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.titulo-decorado::before,
+.titulo-decorado::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background-color: #ff6b6b;
+    top: 50%;
+}
+
+.titulo-decorado::before {
+    left: 20px;
+}
+
+.titulo-decorado::after {
+    right: 20px;
+}
+
+.lista-custom {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-custom li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.lista-custom li::before {
+    content: "✓";
+    color: #2ecc71;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.parrafo-destacado::first-letter {
+    font-size: 3em;
+    font-weight: bold;
+    color: #e74c3c;
+    float: left;
+    padding-right: 8px;
+    line-height: 1;
+}
+
+.tooltip {
+    position: relative;
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ejemplo de tarjeta con esquinas decorativas */
+
+.tarjeta {
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #ddd;
+}
+
+.tarjeta::before,
+.tarjeta::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.tarjeta::before {
+    top: -2px;
+    left: -2px;
+    border-top: 4px solid #4a90e2;
+    border-left: 4px solid #4a90e2;
+}
+
+.tarjeta::after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 4px solid #4a90e2;
+    border-right: 4px solid #4a90e2;
+}
