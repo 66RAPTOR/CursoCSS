@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Ejemplo Básico */
+        @keyframes deslizarDerecha {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(300px);
+            }
+        }
+
+        /* Ejemplo Intermedio con Múltiples Porcentajes */
+        @keyframes transformacionCompleta {
+            0% {
+                transform: scale(0.5) rotate(0deg);
+                background-color: red;
+                opacity: 0.5;
+                width: 200px;
+            }
+
+            50% {
+                transform: scale(1.2) rotate(180deg);
+                background-color: blue;
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1) rotate(360deg);
+                background-color: green;
+                opacity: 1;
+            }
+        }
+
+        /* Ejemplo Avanzado con Múltiples Transformaciones */
+        @keyframes efectoInteractivo {
+            0% {
+                transform:
+                    translateX(0) translateY(0) rotate(0deg) skew(0deg);
+                border-radius: 0%;
+            }
+
+            25% {
+                transform:
+                    translateX(50px) translateY(-20px) rotate(45deg) skew(10deg);
+                border-radius: 20%;
+            }
+
+            75% {
+                transform:
+                    translateX(-30px) translateY(10px) rotate(-45deg) skew(-10deg);
+                border-radius: 90%;
+            }
+
+            100% {
+                transform:
+                    translateX(0) translateY(0) rotate(0deg) skew(0deg);
+                border-radius: 0%;
+            }
+        }
+
+
+         /* Ejemplo efecto Complejo  */
+        @keyframes efectoComplejo {
+            0% {
+                transform:
+                    translateX(0) translateY(0) rotate(0deg) scale(1);
+                background-color: red;
+                filter: blur(0px);
+            }
+
+            50% {
+                transform:
+                    translateX(200px) translateY(100px) rotate(180deg) scale(1.5);
+                background-color: blue;
+                filter: blur(5px);
+            }
+
+            100% {
+                transform:
+                    translateX(0) translateY(0) rotate(360deg) scale(1);
+                background-color: green;
+                filter: blur(0px);
+            }
+        }
+
+
+        .caja {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: purple;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .basico {
+            animation: deslizarDerecha 2s linear infinite;
+        }
+
+        .intermedio {
+            animation: transformacionCompleta 3s ease-in-out infinite;
+        }
+
+        .avanzado {
+            animation: efectoInteractivo 4s infinite;
+        }
+
+        .efectoComplejo {
+            animation: efectoInteractivo 4s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja basico">Básico</div>
+    <div class="caja intermedio">Intermedio</div>
+    <div class="caja avanzado">Avanzado</div>
+    <div class="caja efectoComplejo">efectoComplejo</div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Nivel 1: Animación Simple */
+        @keyframes aparecer {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .basico {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation: aparecer 2s ease-in;
+        }
+
+        /* Nivel 2: Transformaciones Múltiples */
+        @keyframes moverRotar {
+            0% { 
+                transform: translateX(0) rotate(0deg); 
+                background-color: red;
+            }
+            50% { 
+                transform: translateX(200px) rotate(180deg); 
+                background-color: green;
+            }
+            100% { 
+                transform: translateX(0) rotate(360deg); 
+                background-color: red;
+            }
+        }
+
+        .intermedio {
+            width: 100px;
+            height: 100px;
+            animation: moverRotar 3s linear infinite;
+        }
+
+        /* Nivel 3: Animación Compleja */
+        @keyframes ondear {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-5deg); }
+            75% { transform: scale(0.8) rotate(5deg); }
+        }
+
+        .avanzado {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, purple, pink);
+            animation: 
+                ondear 2s ease-in-out infinite,
+                cambiarColor 5s infinite alternate;
+        }
+
+        @keyframes cambiarColor {
+            from { filter: hue-rotate(0deg); }
+            to { filter: hue-rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="basico"></div>
+    <div class="intermedio"></div>
+    <div class="avanzado"></div>
+</body>
+</html>

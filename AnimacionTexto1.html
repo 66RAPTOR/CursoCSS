@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaciones de Texto Complejas</title>
+  <style>
+    /* Estilo general */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(45deg, #4e68cf, #348aa0, #7f739e);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Contenedor del texto */
+    .animated-text {
+      font-size: 3rem; /* Tamaño del texto */
+      font-weight: bold; /* Negrita */
+      position: relative; /* Necesario para usar pseudoelementos */
+      text-transform: uppercase; /* Texto en mayúsculas */
+      animation: colorChange 4s infinite ease-in-out; /* Cambio de color infinito */
+    }
+
+    /* Pseudoelemento para crear un efecto de resplandor */
+    .animated-text::after {
+      content: attr(data-text); /* Copia el contenido del texto original */
+      position: absolute; /* Se posiciona encima del texto original */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: transparent;
+      text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+      animation: glow 2s infinite alternate; /* Alterna el brillo */
+    }
+
+    /* Animación para cambiar el color del texto */
+    @keyframes colorChange {
+      0% { color: #ff0080; }
+      25% { color: #ff8000; }
+      50% { color: #80ff00; }
+      75% { color: #0080ff; }
+      100% { color: #ff0080; }
+    }
+
+    /* Animación para el resplandor */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff0080, 0 0 30px #ff8000, 0 0 50px #ff8000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Texto con animaciones complejas -->
+  <div class="animated-text" data-text="Animación 3D">Animación 3D</div>
+</body>
+</html>

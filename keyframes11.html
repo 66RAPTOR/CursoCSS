@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo con translate3d, rotate3d, scale3d y perspective</title>
+  <style>
+    /* Estilo general del cuerpo */
+    body {
+      display: flex; /* Centrar el contenido horizontalmente */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      height: 100vh; /* Altura completa de la ventana */
+      margin: 0; /* Sin márgenes */
+      background-color: #282c34; /* Fondo oscuro */
+      color: white; /* Texto blanco */
+      font-family: Arial, sans-serif; /* Fuente del texto */
+    }
+
+    /* Contenedor con perspectiva */
+    .scene {
+      width: 300px;
+      height: 300px;
+      perspective: 1000px; /* Profundidad del 3D */
+    }
+
+    /* Cuadrado animado */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #61dafb; /* Azul claro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black; /* Texto negro */
+      font-size: 18px;
+      font-weight: bold;
+      transform-style: preserve-3d; /* Mantener el efecto 3D */
+      animation: transform3DExample 15s infinite ease-in-out; /* Animación */
+    }
+
+    /* Animación */
+    @keyframes transform3DExample {
+      0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg);
+      }
+      25% {
+        transform: translate3d(50px, -50px, 50px) scale3d(1.2, 1.2, 1.2) rotate3d(1, 0, 0, 45deg);
+      }
+      50% {
+        transform: translate3d(-50px, 50px, -100px) scale3d(0.8, 0.8, 0.8) rotate3d(0, 1, 0, 90deg);
+      }
+      75% {
+        transform: translate3d(0, -100px, 50px) scale3d(1, 1.5, 1) rotate3d(0, 0, 1, 135deg);
+      }
+      100% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="box">3D</div>
+  </div>
+</body>
+</html>

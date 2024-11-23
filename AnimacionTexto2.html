@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texto Elegante Animado</title>
+  <style>
+    /* Estilo general */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #1e1e2f; /* Fondo oscuro neutro */
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Contenedor del texto */
+    .animated-text {
+      font-size: 4rem; /* Tamaño grande */
+      font-weight: 700; /* Negrita */
+      background: linear-gradient(45deg, #89f7fe, #66a6ff, #8e44ad, #f4c4f3);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 5s infinite ease-in-out, move3D 3s infinite alternate ease-in-out;
+      text-align: center;
+      transform: perspective(600px) rotateX(10deg);
+    }
+
+    /* Animación del gradiente */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Animación 3D */
+    @keyframes move3D {
+      0% {
+        transform: perspective(600px) rotateX(10deg) translateZ(0px);
+      }
+      100% {
+        transform: perspective(600px) rotateX(15deg) translateZ(30px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Texto animado -->
+  <div class="animated-text">Texto Elegante</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cubo Giratorio 3D</title>
+  <style>
+    /* Estilo del cuerpo de la página */
+    body {
+      display: flex; /* Centra el contenido horizontalmente */
+      justify-content: center; /* Centra el contenido horizontalmente */
+      align-items: center; /* Centra el contenido verticalmente */
+      height: 100vh; /* Ocupa toda la altura de la pantalla */
+      margin: 0; /* Elimina los márgenes del cuerpo */
+      background-color: #121212; /* Fondo oscuro */
+      color: white; /* Texto blanco */
+      font-family: Arial, sans-serif; /* Fuente del texto */
+    }
+
+    /* Contenedor de la escena 3D */
+    .scene {
+      width: 200px; /* Ancho del contenedor */
+      height: 200px; /* Alto del contenedor */
+      perspective: 800px; /* Profundidad del efecto 3D */
+    }
+
+    /* Cubo 3D */
+    .cube {
+      width: 100%; /* Ancho completo del contenedor */
+      height: 100%; /* Alto completo del contenedor */
+      position: relative; /* Necesario para posicionar las caras del cubo */
+      transform-style: preserve-3d; /* Mantiene el efecto 3D de las caras */
+      animation: spinCube 5s infinite linear; /* Animación de rotación continua */
+    }
+
+    /* Caras del cubo */
+    .face {
+      position: absolute; /* Posiciona cada cara en relación al cubo */
+      width: 200px; /* Ancho de cada cara */
+      height: 200px; /* Alto de cada cara */
+      background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+      border: 2px solid #333; /* Borde oscuro para delimitar cada cara */
+      display: flex; /* Para centrar el texto */
+      justify-content: center; /* Centra el texto horizontalmente */
+      align-items: center; /* Centra el texto verticalmente */
+      font-size: 24px; /* Tamaño del texto */
+      font-weight: bold; /* Texto en negrita */
+    }
+
+    /* Posiciona cada cara del cubo */
+    .front  { transform: rotateY(0deg) translateZ(100px); } /* Frente */
+    .back   { transform: rotateY(180deg) translateZ(100px); } /* Parte trasera */
+    .left   { transform: rotateY(-90deg) translateZ(100px); } /* Lado izquierdo */
+    .right  { transform: rotateY(90deg) translateZ(100px); } /* Lado derecho */
+    .top    { transform: rotateX(90deg) translateZ(100px); } /* Parte superior */
+    .bottom { transform: rotateX(-90deg) translateZ(100px); } /* Parte inferior */
+
+    /* Animación del cubo */
+    @keyframes spinCube {
+      0% { transform: rotateX(0deg) rotateY(0deg); } /* Posición inicial */
+      100% { transform: rotateX(360deg) rotateY(360deg); } /* Gira 360° en ambos ejes */
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor de la escena 3D -->
+  <div class="scene">
+    <!-- Cubo que contiene las caras -->
+    <div class="cube">
+      <div class="face front">Front</div> <!-- Cara frontal -->
+      <div class="face back">Back</div> <!-- Cara trasera -->
+      <div class="face left">Left</div> <!-- Lado izquierdo -->
+      <div class="face right">Right</div> <!-- Lado derecho -->
+      <div class="face top">Top</div> <!-- Parte superior -->
+      <div class="face bottom">Bottom</div> <!-- Parte inferior -->
+    </div>
+  </div>
+</body>
+</html>

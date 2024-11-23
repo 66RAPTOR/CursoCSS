@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @keyframes efectoTexto {
+            0% {
+                letter-spacing: 0px;
+                text-shadow: 
+                    0 0 5px rgba(0,0,0,0),
+                    0 0 10px rgba(255,0,0,0);
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                letter-spacing: 5px;
+                text-shadow: 
+                    0 0 5px rgba(0,0,255,0.5),
+                    0 0 10px rgba(255,0,0,0.5);
+                transform: scale(1.1) rotate(5deg);
+            }
+            100% {
+                letter-spacing: 0px;
+                text-shadow: 
+                    0 0 5px rgba(0,0,0,0),
+                    0 0 10px rgba(255,0,0,0);
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .texto-animado {
+            font-size: 2rem;
+            color: #333;
+            animation: efectoTexto 3s infinite;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="texto-animado">Texto Animado</div>
+</body>
+</html>

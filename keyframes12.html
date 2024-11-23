@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cubo 3D en Movimiento</title>
+  <style>
+    /* Estilo general del cuerpo */
+    body {
+      display: flex; /* Permite centrar el contenido en la pantalla */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 100vh; /* Ocupa toda la altura de la ventana */
+      margin: 0; /* Sin márgenes */
+      background-color: #1a1a1a; /* Color de fondo oscuro */
+      color: white; /* Texto en color blanco */
+      font-family: Arial, sans-serif; /* Estilo de fuente */
+    }
+
+    /* Contenedor principal que aplica perspectiva 3D */
+    .scene {
+      width: 400px; /* Ancho del contenedor */
+      height: 400px; /* Alto del contenedor */
+      perspective: 1000px; /* Crea un punto de fuga para el efecto tridimensional */
+    }
+
+    /* Cubo que contiene las caras */
+    .cube {
+      width: 150px; /* Ancho del cubo */
+      height: 150px; /* Alto del cubo */
+      position: relative; /* Necesario para posicionar las caras dentro del cubo */
+      transform-style: preserve-3d; /* Mantiene el efecto tridimensional al rotar */
+      animation: moveCube 6s infinite ease-in-out; /* Aplica una animación continua al cubo */
+    }
+
+    /* Estilo general de cada cara del cubo */
+    .face {
+      position: absolute; /* Posiciona cada cara en relación al cubo */
+      width: 150px; /* Ancho de la cara */
+      height: 150px; /* Alto de la cara */
+      background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+      border: 2px solid #333; /* Borde oscuro para distinguir las caras */
+      display: flex; /* Habilita el centrado del texto */
+      justify-content: center; /* Centra el texto horizontalmente */
+      align-items: center; /* Centra el texto verticalmente */
+      font-size: 20px; /* Tamaño del texto */
+      font-weight: bold; /* Texto en negrita */
+      color: black; /* Color del texto */
+    }
+
+    /* Posicionamiento de las caras del cubo */
+    .front  { transform: rotateY(0deg) translateZ(75px); } /* Cara frontal */
+    .back   { transform: rotateY(180deg) translateZ(75px); } /* Cara trasera */
+    .left   { transform: rotateY(-90deg) translateZ(75px); } /* Cara izquierda */
+    .right  { transform: rotateY(90deg) translateZ(75px); } /* Cara derecha */
+    .top    { transform: rotateX(90deg) translateZ(75px); } /* Cara superior */
+    .bottom { transform: rotateX(-90deg) translateZ(75px); } /* Cara inferior */
+
+    /* Animación del cubo */
+    @keyframes moveCube {
+      0% {
+        transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg) scale3d(1, 1, 1);
+        /* Posición inicial: sin movimiento, rotación ni escala */
+      }
+      25% {
+        transform: translate3d(100px, -100px, 50px) rotate3d(1, 1, 0, 90deg) scale3d(1.2, 1.2, 1.2);
+        /* El cubo se mueve en 3D, rota 90 grados y aumenta ligeramente su tamaño */
+      }
+      50% {
+        transform: translate3d(-100px, 100px, -50px) rotate3d(0, 1, 1, 180deg) scale3d(0.8, 0.8, 0.8);
+        /* El cubo se mueve en dirección opuesta, rota 180 grados y se encoge */
+      }
+      75% {
+        transform: translate3d(50px, -50px, 100px) rotate3d(1, 0, 1, 270deg) scale3d(1, 1, 1);
+        /* El cubo se mueve hacia un punto diferente, rota 270 grados y cambia de escala */
+      }
+      100% {
+        transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 360deg) scale3d(1, 1, 1);
+        /* Vuelve a su posición original, completando un giro completo de 360 grados */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenedor principal de la escena -->
+  <div class="scene">
+    <!-- Cubo que contiene las seis caras -->
+    <div class="cube">
+      <div class="face front">Front</div> <!-- Cara frontal -->
+      <div class="face back">Back</div> <!-- Cara trasera -->
+      <div class="face left">Left</div> <!-- Cara izquierda -->
+      <div class="face right">Right</div> <!-- Cara derecha -->
+      <div class="face top">Top</div> <!-- Cara superior -->
+      <div class="face bottom">Bottom</div> <!-- Cara inferior -->
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformaciones 3D Corregidas</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1e1e2f;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      perspective: 800px; /* Profundidad de perspectiva */
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: #ff6f61;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      transform-style: preserve-3d; /* Mantener 3D */
+      animation: transformaciones3D 5s infinite ease-in-out;
+    }
+
+    /* Añadir profundidad visual */
+    .box::before, .box::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateZ(-30px); /* Añadir "espesor" */
+    }
+
+    @keyframes transformaciones3D {
+      0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg);
+      }
+      25% {
+        transform: translate3d(50px, 50px, 50px) scale3d(1.2, 1.2, 1.2) rotate3d(1, 0, 0, 45deg);
+      }
+      50% {
+        transform: translate3d(-50px, -50px, -100px) scale3d(0.8, 0.8, 0.8) rotate3d(0, 1, 0, 90deg);
+      }
+      75% {
+        transform: translate3d(0, 100px, 50px) scale3d(1, 1.5, 1) rotate3d(0, 0, 1, 135deg);
+      }
+      100% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate3d(0, 0, 0, 0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">3D Box</div>
+  </div>
+</body>
+</html>

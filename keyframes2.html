@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Definimos la animación */
+        @keyframes moverCaja {
+            0% {
+                transform: translateX(0);
+                background-color: red;
+            }
+            50% {
+                transform: translateX(200px);
+                background-color: blue;
+            }
+            100% {
+                transform: translateX(0);
+                background-color: red;
+            }
+        }
+
+        /* El elemento que queremos animar */
+        .caja-animada {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Aplicamos la animación */
+            animation-name: moverCaja;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        /* Ejemplo 2: Rotación */
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .caja-rotando {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-top: 20px;
+            animation: rotar 3s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja-animada"></div>
+    <div class="caja-rotando"></div>
+</body>
+</html>

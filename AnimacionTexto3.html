@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texto con Efecto de Luz</title>
+  <style>
+    /* Fondo general */
+    body {
+      display: flex; /* Centra el contenido horizontal y verticalmente */
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Ocupa toda la ventana */
+      margin: 0;
+      background: linear-gradient(120deg, #232526, #414345); /* Fondo oscuro degradado */
+      font-family: 'Poppins', sans-serif; /* Fuente elegante */
+      overflow: hidden;
+    }
+
+    /* Contenedor del texto animado */
+    .animated-text {
+      font-size: 4rem; /* Tamaño del texto */
+      font-weight: bold; /* Negrita */
+      position: relative; /* Necesario para el pseudoelemento */
+      color: #fff; /* Color base del texto */
+      text-transform: uppercase; /* Texto en mayúsculas */
+      animation: rotateGlow 6s infinite ease-in-out; /* Rotación suave */
+    }
+
+    /* Efecto de luz detrás del texto */
+    .animated-text::before {
+      content: ''; /* Pseudoelemento vacío */
+      position: absolute; /* Posiciona detrás del texto */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centra el pseudoelemento */
+      width: 150%; /* Tamaño más grande que el texto */
+      height: 150%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent); /* Luz difusa */
+      z-index: -1; /* Coloca detrás del texto */
+      filter: blur(50px); /* Suaviza la luz */
+      animation: glowPulse 3s infinite alternate; /* Pulso de luz */
+    }
+
+    /* Animación de rotación suave */
+    @keyframes rotateGlow {
+      0% {
+        transform: rotateY(0deg); /* Sin rotación */
+      }
+      50% {
+        transform: rotateY(180deg); /* Mitad de vuelta */
+      }
+      100% {
+        transform: rotateY(360deg); /* Vuelve al inicio */
+      }
+    }
+
+    /* Pulso de luz */
+    @keyframes glowPulse {
+      0% {
+        opacity: 0.3; /* Luz tenue */
+      }
+      100% {
+        opacity: 0.7; /* Luz más intensa */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Texto animado -->
+  <div class="animated-text">Efecto Luminoso</div>
+</body>
+</html>
