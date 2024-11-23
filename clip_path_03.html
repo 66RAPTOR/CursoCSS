@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaciones con Clip-path</title>
+  <style>
+    /* Contenedor principal */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Altura de la pantalla completa */
+      background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fondo degradado */
+      overflow: hidden; /* Oculta desbordamientos */
+    }
+
+    /* Figura animada */
+    .animated-shape {
+      width: 200px;
+      height: 200px;
+      background: url('https://via.placeholder.com/200') no-repeat center/cover; /* Imagen de fondo */
+      animation: morph 4s infinite alternate ease-in-out; /* Animación infinita */
+    }
+
+    /* Definición de animación */
+    @keyframes morph {
+      0% {
+        clip-path: circle(50% at 50% 50%); /* Comienza como círculo */
+      }
+      25% {
+        clip-path: ellipse(70% 40% at 50% 50%); /* Se transforma en elipse */
+      }
+      50% {
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Cambia a triángulo */
+      }
+      75% {
+        clip-path: inset(10% 10% 10% 10%); /* Se convierte en un rectángulo */
+      }
+      100% {
+        clip-path: circle(50% at 50% 50%); /* Vuelve al círculo */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="animated-shape"></div> <!-- Elemento animado -->
+  </div>
+</body>
+</html>

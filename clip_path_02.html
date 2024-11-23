@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clip-path con imágenes</title>
+  <style>
+    /* https://bennettfeely.com/clippy/ */
+    /* https://mohammadshehadeh.com/goodies/clip-path-css-generator */
+
+    /* Contenedor principal */
+    .container {
+      display: flex;
+      justify-content: space-around; /* Espaciado entre los elementos */
+      align-items: center; /* Centra verticalmente los elementos */
+      height: 100vh; /* Altura completa del viewport */
+      background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fondo degradado */
+    }
+
+    /* Estilo base para las figuras */
+    .shape {
+      width: 150px;
+      height: 150px;
+      background-size: cover; /* Asegura que la imagen cubra toda la figura */
+      background-position: center; /* Centra la imagen en la figura */
+      transition: transform 0.4s ease, clip-path 0.4s ease; /* Transiciones suaves */
+    }
+
+    /* Forma circular con imagen */
+    .circle {
+      clip-path: circle(50%); /* Recorta en forma circular */
+      background-image: url('https://static01.nyt.com/images/2024/03/05/autossell/00TB-MEOWS/00TB-MEOWS-threeByTwoMediumAt2X.jpg'); /* Imagen de fondo */
+    }
+
+    /* Forma elíptica con imagen */
+    .ellipse {
+      clip-path: ellipse(70% 50% at 50% 50%); /* Recorta en forma de elipse */
+      background-image: url('img/gato_01.webp'); /* Imagen de fondo */
+    }
+
+    /* Triángulo con imagen */
+    .triangle {
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Coordenadas del triángulo */
+      background-image: url('https://via.placeholder.com/150/32CD32'); /* Imagen de fondo */
+    }
+
+    /* Interacción al pasar el mouse */
+    .shape:hover {
+      transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+      filter: brightness(1.2); /* Incrementa el brillo */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="shape circle"></div> <!-- Círculo -->
+    <div class="shape ellipse"></div> <!-- Elipse -->
+    <div class="shape triangle"></div> <!-- Triángulo -->
+  </div>
+</body

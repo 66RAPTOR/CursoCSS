@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+    <style>
+        .clip {
+            width: 300px;
+            clip-path: path("M370.5,329Q343,418,248,404.5Q153,391,88,315.5Q23,240,90,167.5Q157,95,236,102.5Q315,110,356.5,175Q398,240,370.5,329Z"
+                ) tra;
+            animation: animation-clip 3s infinite;
+            transform: translate(100 100);
+            background-image: url(img/gato_01.webp);
+        }
+
+        @keyframes animation-clip {
+            0% {
+                clip-path: path("M370.5,329Q343,418,248,404.5Q153,391,88,315.5Q23,240,90,167.5Q157,95,236,102.5Q315,110,356.5,175Q398,240,370.5,329Z"
+                    );
+            }
+
+            50% {
+                clip-path: path("M384,298Q307,356,238,360Q169,364,90,302Q11,240,80.5,162.5Q150,85,253,62Q356,39,408.5,139.5Q461,240,384,298Z"
+                    );
+            }
+
+            100% {
+                clip-path: path("M370.5,329Q343,418,248,404.5Q153,391,88,315.5Q23,240,90,167.5Q157,95,236,102.5Q315,110,356.5,175Q398,240,370.5,329Z"
+                    );
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clip">
+
+    </div>
+
+</body>
+
+</html>
