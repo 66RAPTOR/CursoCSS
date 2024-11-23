@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Ejemplo básico de opacidad */
+        .box-basic {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            opacity: 0.5;
+            /* 50% de transparencia */
+        }
+
+        /* Ejemplo con hover */
+        .box-hover {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+            /* Transición suave */
+        }
+
+        .box-hover:hover {
+            opacity: 1;
+            /* Completamente opaco al pasar el mouse */
+        }
+
+        /* Ejemplo con imagen */
+        .image-opacity {
+            opacity: 0.7;
+        }
+
+        .image-opacity:hover {
+            opacity: 1;
+        }
+
+        /* Ejemplo con texto y fondo */
+        .text-container {
+            background-color: black;
+            opacity: 0.8;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Ejemplo usando rgba en lugar de opacity */
+        .box-rgba {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 255, 0.5);
+            /* Azul con 50% de transparencia */
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HTML para los ejemplos -->
+    <div class="box-basic">Caja básica</div>
+
+    <div class="box-hover">Hover me</div>
+
+    <img src="tu-imagen.jpg" class="image-opacity" alt="Imagen con opacidad">
+
+    <div class="text-container">
+        Este es un texto con fondo semi-transparente
+    </div>
+
+    <div class="box-rgba">
+        Usando rgba
+    </div>
+</body>
+
+</html>
