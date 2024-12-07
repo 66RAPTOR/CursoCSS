@@ -1,0 +1,12 @@
+/* Estilos generales */
+:root {
+    --main-color: #023d64;
+    --secondary-color: #2ecc71;
+    --fondo: #000000;
+  }
+  
+  body {
+    color: var(--main-color);
+    background-color: var(--fondo);
+  }
+  
