@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout Complejo con CSS Grid</title>
+    <style>
+        /* Reset básico para eliminar márgenes y padding por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configuración del contenedor principal con Grid */
+        .grid-container {
+            /* Definimos un grid con áreas nominadas */
+            display: grid;
+            
+            /* Creamos un grid de 3 columnas con diferentes anchos */
+            /* 1fr: columna flexible, 250px: columna fija, 2fr: columna más ancha */
+            grid-template-columns: 1fr 250px 2fr;
+            
+            /* Definimos 4 filas con diferentes alturas */
+            grid-template-rows: 100px auto 200px 100px;
+            
+            /* Asignamos nombres a las áreas del grid */
+            grid-template-areas: 
+                "header header header"
+                "nav main sidebar"
+                "nav content sidebar"
+                "footer footer footer";
+            
+            /* Añadimos un pequeño espacio entre las celdas */
+            gap: 10px;
+            
+            /* Altura total de la ventana */
+            height: 100vh;
+        }
+
+        /* Estilos para las diferentes áreas del grid */
+        .header {
+            grid-area: header;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav {
+            grid-area: nav;
+            background-color: #2ecc71;
+            padding: 20px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: #f39c12;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #9b59b6;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #34495e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Media Query para hacerlo responsive */
+        @media (max-width: 768px) {
+            .grid-container {
+                /* En pantallas pequeñas, cambiamos a una sola columna */
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "main"
+                    "content"
+                    "sidebar"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Área de encabezado -->
+        <div class="header">
+            <h1>Encabezado Principal</h1>
+        </div>
+
+        <!-- Área de navegación -->
+        <div class="nav">
+            <h2>Menú de Navegación</h2>
+            <ul>
+                <li>Inicio</li>
+                <li>Productos</li>
+                <li>Servicios</li>
+                <li>Contacto</li>
+            </ul>
+        </div>
+
+        <!-- Área principal -->
+        <div class="main">
+            <h2>Contenido Principal</h2>
+            <p>Este es el área principal del sitio web.</p>
+        </div>
+
+        <!-- Área de contenido adicional -->
+        <div class="content">
+            <h2>Contenido Secundario</h2>
+            <p>Información adicional o complementaria.</p>
+        </div>
+
+        <!-- Área de sidebar -->
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Información complementaria o widgets.</p>
+        </div>
+
+        <!-- Área de pie de página -->
+        <div class="footer">
+            <p>&copy; 2024 Mi Sitio Web</p>
+        </div>
+    </div>
+</body>
+</html>

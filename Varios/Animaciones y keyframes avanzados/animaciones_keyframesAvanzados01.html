@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Animaciones y Keyframes Avanzados</title>
+    <style>
+        /* Reset básico y estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal de animaciones */
+        .animation-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        /* Estilos base para los elementos animados */
+        .animated-element {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            perspective: 1000px;
+        }
+
+        /* 1. Animación de Transformación 3D Compleja */
+        .cube {
+            background-color: #3498db;
+            animation: rotate-cube 4s infinite linear;
+            transform-style: preserve-3d;
+        }
+
+        /* Keyframes para rotación 3D del cubo */
+        @keyframes rotate-cube {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: rotateX(180deg) rotateY(90deg);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(180deg);
+            }
+        }
+
+        /* 2. Animación Morfing con Múltiples Transformaciones */
+        .morph {
+            background-color: #e74c3c;
+            border-radius: 0;
+            animation: morphing 3s infinite alternate ease-in-out;
+        }
+
+        /* Keyframes para transformación morfing */
+        @keyframes morphing {
+            0% {
+                border-radius: 0;
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                border-radius: 50%;
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                border-radius: 0;
+                transform: scale(0.8) rotate(360deg);
+            }
+        }
+
+        /* 3. Animación Compleja con Múltiples Propiedades */
+        .complex-anim {
+            background-color: #2ecc71;
+            animation: 
+                color-shift 4s infinite alternate,
+                bounce 2s infinite alternate,
+                shadow-pulse 3s infinite alternate;
+        }
+
+        /* Keyframes para cambio de color */
+        @keyframes color-shift {
+            0% { background-color: #2ecc71; }
+            50% { background-color: #9b59b6; }
+            100% { background-color: #f39c12; }
+        }
+
+        /* Keyframes para animación de rebote */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+        }
+
+        /* Keyframes para pulso de sombra */
+        @keyframes shadow-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.4); }
+            100% { box-shadow: 0 0 20px 10px rgba(0,0,0,0.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <!-- 1. Cubo con Rotación 3D -->
+        <div class="animated-element cube">
+            Cubo 3D
+        </div>
+
+        <!-- 2. Elemento con Transformación Morfing -->
+        <div class="animated-element morph">
+            Morfing
+        </div>
+
+        <!-- 3. Animación Compleja Multifase -->
+        <div class="animated-element complex-anim">
+            Complejo
+        </div>
+    </div>
+</body>
+</html>

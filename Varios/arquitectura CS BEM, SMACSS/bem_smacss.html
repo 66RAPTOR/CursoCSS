@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo BEM y SMACSS</title>
+    <style>
+        /* Base: Estilos generales y reseteo */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* Layout: Estructura principal */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Módulo: Card (Bloque BEM) */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        /* Elementos del card */
+        .card__title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card__content {
+            color: #666;
+        }
+
+        /* Modificadores del card */
+        .card--primary {
+            border-left: 4px solid #007bff;
+        }
+
+        .card--large {
+            max-width: 600px;
+        }
+
+        /* Módulo: Button (Bloque BEM) */
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Elementos del button */
+        .button__icon {
+            margin-right: 5px;
+        }
+
+        /* Modificadores del button */
+        .button--primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .button--secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        /* Estados */
+        .is-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .is-hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Card con modificador primario -->
+        <div class="card card--primary">
+            <h2 class="card__title">Título de la Tarjeta</h2>
+            <p class="card__content">Contenido de la tarjeta usando metodología BEM y arquitectura SMACSS.</p>
+        </div>
+
+        <!-- Card con modificador de tamaño grande -->
+        <div class="card card--large">
+            <h2 class="card__title">Otra Tarjeta</h2>
+            <p class="card__content">Ejemplo de un card con modificador de tamaño.</p>
+        </div>
+
+        <!-- Botones con diferentes modificadores y estados -->
+        <button class="button button--primary">
+            <span class="button__icon">📝</span>
+            Botón Primary
+        </button>
+
+        <button class="button button--secondary is-disabled">
+            <span class="button__icon">🚫</span>
+            Botón Deshabilitado
+        </button>
+    </div>
+</body>
+
+</html>

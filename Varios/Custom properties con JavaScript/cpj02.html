@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control Dinámico con Custom Properties</title>
+    <style>
+        /* Definición de variables con valores por defecto */
+        :root {
+            /* Paleta de colores principal */
+            --primary-hue: 210; /* Azul */
+            --primary-saturation: 80%;
+            --primary-lightness: 50%;
+
+            /* Paleta de colores secundaria */
+            --accent-hue: 140; /* Verde */
+            --accent-saturation: 70%;
+            --accent-lightness: 45%;
+
+            /* Variables de tipografía */
+            --font-size-base: 16px;
+            --font-weight-normal: 400;
+            --font-weight-bold: 700;
+
+            /* Variables de espaciado */
+            --spacing-unit: 8px;
+            --border-radius: 8px;
+
+            /* Variables de sombras y efectos */
+            --shadow-elevation: 0 4px 6px;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+
+            /* Variables calculadas */
+            --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+            --accent-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness));
+            --text-color: hsl(var(--primary-hue), 10%, 20%);
+            --background-color: hsl(var(--primary-hue), 20%, 95%);
+        }
+
+        /* Tema oscuro */
+        .dark-mode {
+            --primary-lightness: 40%;
+            --accent-lightness: 35%;
+            --text-color: hsl(var(--primary-hue), 10%, 90%);
+            --background-color: hsl(var(--primary-hue), 20%, 10%);
+        }
+
+        /* Estilos base */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: calc(var(--spacing-unit) * 4);
+            transition: 
+                background-color 0.3s, 
+                color 0.3s;
+        }
+
+        /* Contenedor principal */
+        .dashboard {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-elevation) var(--shadow-color);
+            padding: calc(var(--spacing-unit) * 4);
+        }
+
+        /* Controles de personalización */
+        .customization-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        /* Estilo de controles */
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-unit);
+        }
+
+        /* Botones y controles */
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 
+                calc(var(--spacing-unit) * 1.5) 
+                calc(var(--spacing-unit) * 3);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: 
+                background-color 0.3s, 
+                transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Estilo de inputs */
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-unit);
+        }
+
+        /* Tarjetas de información */
+        .info-card {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: calc(var(--spacing-unit) * 2);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            opacity: calc(var(--card-opacity, 1));
+            transition: opacity 0.3s;
+        }
+
+        /* Inputs de personalización */
+        .color-input, 
+        .range-input {
+            -webkit-appearance: none;
+            width: 100%;
+            height: calc(var(--spacing-unit) * 2);
+            background: transparent;
+            outline: none;
+            margin: calc(var(--spacing-unit) * 2) 0;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            .customization-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Panel de Personalización Avanzado</h1>
+
+        <!-- Panel de Personalización -->
+        <div class="customization-panel">
+            <!-- Control de Color Primario -->
+            <div class="control-group">
+                <h3>Color Primario</h3>
+                <div class="input-group">
+                    <label for="primaryHue">Tono:</label>
+                    <input 
+                        type="range" 
+                        id="primaryHue" 
+                        min="0" 
+                        max="360" 
+                        value="210" 
+                        class="range-input"
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="primarySaturation">Saturación:</label>
+                    <input 
+                        type="range" 
+                        id="primarySaturation" 
+                        min="0" 
+                        max="100" 
+                        value="80" 
+                        class="range-input"
+                    >
+                </div>
+            </div>
+
+            <!-- Control de Color de Acento -->
+            <div class="control-group">
+                <h3>Color de Acento</h3>
+                <div class="input-group">
+                    <label for="accentHue">Tono:</label>
+                    <input 
+                        type="range" 
+                        id="accentHue" 
+                        min="0" 
+                        max="360" 
+                        value="140" 
+                        class="range-input"
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="accentSaturation">Saturación:</label>
+                    <input 
+                        type="range" 
+                        id="accentSaturation" 
+                        min="0" 
+                        max="100" 
+                        value="70" 
+                        class="range-input"
+                    >
+                </div>
+            </div>
+
+            <!-- Controles Adicionales -->
+            <div class="control-group">
+                <h3>Otros Controles</h3>
+                <button id="toggleDarkMode" class="btn">
+                    Alternar Modo Oscuro
+                </button>
+                <div class="input-group">
+                    <label for="cardOpacity">Opacidad de Tarjetas:</label>
+                    <input 
+                        type="range" 
+                        id="cardOpacity" 
+                        min="0" 
+                        max="1" 
+                        step="0.1" 
+                        value="1" 
+                        class="range-input"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjetas de Información -->
+        <div id="infoCards">
+            <div class="info-card">
+                <h2>Información Personalizada</h2>
+                <p>Experimenta con los controles para cambiar el aspecto.</p>
+            </div>
+            <div class="info-card">
+                <h2>Variables CSS Dinámicas</h2>
+                <p>Observa cómo cambian los estilos en tiempo real.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Selectores de elementos
+        const rootStyles = document.documentElement.style;
+        const infoCards = document.getElementById('infoCards');
+        const toggleDarkModeBtn = document.getElementById('toggleDarkMode');
+
+        // Selectores de inputs de personalización
+        const primaryHueInput = document.getElementById('primaryHue');
+        const primarySaturationInput = document.getElementById('primarySaturation');
+        const accentHueInput = document.getElementById('accentHue');
+        const accentSaturationInput = document.getElementById('accentSaturation');
+        const cardOpacityInput = document.getElementById('cardOpacity');
+
+        // Función para actualizar variables CSS
+        function updateCSSVariable(variableName, value) {
+            rootStyles.setProperty(variableName, value);
+        }
+
+        // Función para cambiar el tema
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark-mode');
+        }
+
+        // Event Listeners para controles de color primario
+        primaryHueInput.addEventListener('input', (e) => {
+            updateCSSVariable('--primary-hue', e.target.value);
+        });
+
+        primarySaturationInput.addEventListener('input', (e) => {
+            updateCSSVariable('--primary-saturation', `${e.target.value}%`);
+        });
+
+        // Event Listeners para controles de color de acento
+        accentHueInput.addEventListener('input', (e) => {
+            updateCSSVariable('--accent-hue', e.target.value);
+        });
+
+        accentSaturationInput.addEventListener('input', (e) => {
+            updateCSSVariable('--accent-saturation', `${e.target.value}%`);
+        });
+
+        // Event Listener para opacidad de tarjetas
+        cardOpacityInput.addEventListener('input', (e) => {
+            // Establecer variable de opacidad específica para las tarjetas
+            infoCards.style.setProperty('--card-opacity', e.target.value);
+        });
+
+        // Event Listener para cambio de modo
+        toggleDarkModeBtn.addEventListener('click', toggleDarkMode);
+
+        // Función de inicialización
+        function initializeDashboard() {
+            // Puedes añadir lógica de inicialización adicional aquí
+            console.log('Dashboard inicializado');
+        }
+
+        // Llamar a la inicialización cuando el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', initializeDashboard);
+    </script>
+</body>
+</html>
