@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Auto Columns Demo</title>
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        } */
+
+        .grid {
+            display: grid;
+            grid-template-areas: "head head"
+                "menu main"
+                "foot foot";
+        }
+
+        .a {
+            grid-area: head;
+            background: #1297FF
+        }
+
+        .b {
+            grid-area: menu;
+            background: #FF7E79
+        }
+
+        .c {
+            grid-area: main;
+            background: #009193
+        }
+
+        .d {
+            grid-area: foot;
+            background: #929292
+        }
+    </style>
+</head>
+
+<body>
+    <!-- contenedor -->
+    <section class="grid-template">
+        <!-- ítems del grid -->
+        <article class="a">Item 1</article>
+        <article class="b">Item 2</article>
+        <article class="c">Item 3</article>
+        <article class="d">Item 4</article>
+    </section>
+</body>
+
+</html>

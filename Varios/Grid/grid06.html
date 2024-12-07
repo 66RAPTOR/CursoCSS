@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Auto Columns Demo</title>
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        } */
+
+        div.grid-template {
+            display: grid;
+            grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+            grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
+        }
+        header {
+            background: #1297FF;
+            grid-column-start: x0;
+            grid-column-end: x3;
+            grid-row: y0/y1;
+        }
+
+        aside {
+            background: #000000;
+            grid-column: x0/x1;
+            grid-row: y1 / y2;
+            color: white;
+        }
+        section {
+            background: #FF7E79;
+            grid-column: x1 / x3;
+            grid-row: y1 / y3;
+        }
+
+        footer {
+            background: #73FA79;
+            grid-column: x0 / x1;
+            grid-row: y2 / y3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-template">
+        <!-- ítems del grid -->
+        <header>Encabezado</header>
+        <aside>Barra lateral</aside>
+        <section>
+            <h3>hola</h3>
+            <h3>hola</h3>
+            <h3>hola</h3>
+            <h3>hola</h3>
+        </section>
+        <footer>Footer
+            <h3>fotter</h3>
+            <h3>fotter</h3>
+            <h3>fotter</h3>
+            <h3>fotter</h3>
+            <h3>fotter</h3>
+        </footer>
+    </div>
+</body>
+
+</html>

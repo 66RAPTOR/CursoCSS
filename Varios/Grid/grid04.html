@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Auto Columns Demo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            /* Solo 2 columnas definidas de 200px */
+            grid-template-columns: 200px 200px;
+            
+            /* Columnas adicionales de 100px */
+            grid-auto-columns: 100px;
+            
+            gap: 10px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            height: 150px;
+        }
+
+        /* Primeras 2 columnas */
+        .grid-item:nth-child(-n+2) {
+            background-color: #3498db;
+            width: 200px;
+        }
+
+        /* Columnas adicionales */
+        .grid-item:nth-child(n+3) {
+            background-color: #2ecc71;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1er Columna 200px</div>
+        <div class="grid-item">2da Columna 200px</div>
+        <div class="grid-item">3er Columna 100px</div>
+        <div class="grid-item">4ta Columna 100px</div>
+        <div class="grid-item">5ta Columna 100px</div>
+        <div class="grid-item">6ta Columna 100px</div>
+    </div>
+</body>
+</html>

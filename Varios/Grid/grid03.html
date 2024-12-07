@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de grid-auto-columns y grid-auto-rows</title>
+    <style>
+        .grid-container {
+            display: grid;
+            /* Solo definimos 2 columnas */
+            grid-template-columns: 100px 100px;
+            /* Definimos cómo serán las columnas y filas adicionales */
+            grid-auto-columns: 50px; /* Columnas extra serán de 50px */
+            grid-auto-rows: 175px;    /* Filas extra serán de 75px */
+            gap: 5px;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+    </div>
+</body>
+</html>
