@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Properties con JavaScript</title>
+    <style>
+        /* Definición de variables globales en :root */
+        :root {
+            /* Paleta de colores base */
+            --color-primary: #3498db;
+            --color-secondary: #2ecc71;
+            --color-background: #f4f4f4;
+            
+            /* Variables de tipografía */
+            --font-size-base: 16px;
+            --font-family-base: 'Arial', sans-serif;
+            
+            /* Variables de espaciado */
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 30px;
+        }
+
+        /* Tema oscuro */
+        .dark-theme {
+            --color-primary: #2980b9;
+            --color-secondary: #27ae60;
+            --color-background: #2c3e50;
+        }
+
+        /* Estilos base utilizando variables */
+        body {
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base);
+            background-color: var(--color-background);
+            color: var(--color-primary);
+            transition: background-color 0.3s, color 0.3s;
+            padding: var(--spacing-medium);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: var(--spacing-large);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Botones con variables */
+        .btn {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--spacing-small) var(--spacing-medium);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        /* Controles de personalización */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-medium);
+        }
+
+        /* Input para cambio de color */
+        .color-picker {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-small);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <!-- Botón para cambiar tema -->
+            <button id="themeToggle" class="btn">
+                Cambiar Tema
+            </button>
+
+            <!-- Selector de color primario -->
+            <div class="color-picker">
+                <label for="primaryColorPicker">Color Primario:</label>
+                <input 
+                    type="color" 
+                    id="primaryColorPicker" 
+                    value="#3498db"
+                >
+            </div>
+        </div>
+
+        <h1>Custom Properties con JavaScript</h1>
+        <p>Explora cómo manipular variables CSS dinámicamente.</p>
+        <button id="resetButton" class="btn">
+            Restaurar Valores Predeterminados
+        </button>
+    </div>
+
+    <script>
+        // Selectores de elementos
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const primaryColorPicker = document.getElementById('primaryColorPicker');
+        const resetButton = document.getElementById('resetButton');
+        const rootStyles = document.documentElement.style;
+
+        // Función para cambiar tema
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark-theme');
+        }
+
+        // Función para cambiar color primario
+        function changePrimaryColor(color) {
+            // Modificar variable CSS directamente
+            rootStyles.setProperty('--color-primary', color);
+        }
+
+        // Función para restaurar valores predeterminados
+        function resetToDefaults() {
+            // Eliminar clase de tema oscuro si existe
+            document.documentElement.classList.remove('dark-theme');
+            
+            // Restaurar colores predeterminados
+            rootStyles.setProperty('--color-primary', '#3498db');
+            rootStyles.setProperty('--color-secondary', '#2ecc71');
+            rootStyles.setProperty('--color-background', '#f4f4f4');
+
+            // Restaurar valor del selector de color
+            primaryColorPicker.value = '#3498db';
+        }
+
+        // Event Listeners
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        
+        primaryColorPicker.addEventListener('input', (e) => {
+            changePrimaryColor(e.target.value);
+        });
+
+        resetButton.addEventListener('click', resetToDefaults);
+    </script>
+</body>
+</html>

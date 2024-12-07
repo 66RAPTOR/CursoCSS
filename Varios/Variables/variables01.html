@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Variables en CSS</title>
+  <style>
+    /* Definimos las variables globales en el selector :root */
+    :root {
+      --main-color: #3498db;
+      --secondary-color: #2ecc71;
+      --font-family: 'Arial, sans-serif';
+      --padding: 10px;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--main-color);
+      color: white;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: var(--secondary-color);
+      padding: var(--padding);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card h1 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>¡Hola, Ricardo!</h1>
+    <p>Este es un ejemplo de variables en CSS.</p>
+  </div>
+</body>
+</html>
