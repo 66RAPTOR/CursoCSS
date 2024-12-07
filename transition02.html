@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Transiciones CSS</title>
+    <style>
+        /* Estilos base del botón */
+        .transition-button {
+            /* Propiedades iniciales del botón */
+            background-color: rgb(0, 184, 230);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+
+            /* Configuración de transición */
+            /* transition: propiedad duración función-timing curva-de-tiempo */
+            transition: 
+                background-color 0.3s ease-in-out, 
+                transform 0.3s ease-in-out,
+                color 0.3s ease-in-out;
+        }
+
+        /* Estado hover para mostrar efecto de transición */
+        .transition-button:hover {
+            background-color: rgb(109, 224, 253);
+            transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+            color: rgb(0, 102, 150);
+        }
+
+        /* Ejemplo de transición en un div */
+        .transition-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            
+            /* Transición suave para múltiples propiedades */
+            transition: 
+                width 0.5s ease,
+                background-color 0.5s ease;
+        }
+
+        /* Estado hover para el cuadro */
+        .transition-box:hover {
+            width: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de Transiciones CSS</h1>
+    
+    <!-- Botón con transición -->
+    <button class="transition-button">
+        Pasa el ratón sobre mí
+    </button>
+    <br>
+    <br>
+
+    <!-- Cuadro con transición -->
+    <div class="transition-box"></div>
+</body>
+</html>

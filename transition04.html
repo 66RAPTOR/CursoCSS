@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Avanzado de Transiciones CSS</title>
+    <style>
+        /* Contenedor principal */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Tarjeta con transiciones múltiples */
+        .interactive-card {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            /* Transición suave para múltiples propiedades */
+            transition: 
+                transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease-out;
+        }
+
+        /* Efecto hover de la tarjeta */
+        .interactive-card:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Contenido de la tarjeta */
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Botón con transición compleja */
+        .hover-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+
+            /* Transición para efectos múltiples */
+            transition: 
+                background-color 0.3s ease,
+                transform 0.2s ease,
+                color 0.3s ease;
+        }
+
+        /* Efecto hover del botón */
+        .hover-button:hover {
+            background-color: #2ecc71;
+            transform: translateY(-3px);
+            color: #ffeb3b;
+        }
+
+        /* Elemento decorativo con transición */
+        .pulse-element {
+            width: 50px;
+            height: 50px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            
+            /* Animación de pulso */
+            transition: 
+                transform 0.4s ease-in-out,
+                background-color 0.3s ease;
+        }
+
+        .interactive-card:hover .pulse-element {
+            transform: scale(1.5);
+            background-color: #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Tarjeta interactiva con múltiples transiciones -->
+        <div class="interactive-card">
+            <div class="pulse-element"></div>
+            <div class="card-content">
+                <h2>Transiciones Avanzadas</h2>
+                <p>Pasa el ratón sobre la tarjeta para ver efectos suaves</p>
+                <button class="hover-button">
+                    Interactúa Conmigo
+                </button>
+            </div>
+        </div>
+
+        <div class="interactive-card">
+            <div class="pulse-element"></div>
+            <div class="card-content">
+                <h2>Transiciones Avanzadas</h2>
+                <p>Pasa el ratón sobre la tarjeta para ver efectos suaves</p>
+                <button class="hover-button">
+                    Interactúa Conmigo
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
