@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía Completa de Media Queries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilos base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Diseño base para pantallas grandes (Desktop) */
+        .responsive-layout {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        /* Media Query: Tablet (entre 768px y 1024px) */
+        @media screen and (max-width: 1024px) and (min-width: 768px) {
+            .responsive-layout {
+                flex-direction: column;
+            }
+
+            .column {
+                margin: 10px 0;
+            }
+        }
+
+        /* Media Query: Móviles (menos de 768px) */
+        @media screen and (max-width: 767px) {
+            .responsive-layout {
+                flex-direction: column;
+            }
+
+            .column {
+                margin: 5px 0;
+                padding: 10px;
+                background-color: #e0e0e0;
+            }
+
+            /* Ocultar elementos en móviles */
+            .hide-mobile {
+                display: none;
+            }
+        }
+
+        /* Media Query: Orientación */
+        @media screen and (orientation: landscape) {
+            body {
+                background-color: #f0f0f0;
+            }
+        }
+
+        /* Media Query: Impresión */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+
+            .column {
+                border: 1px solid black;
+                background: none !important;
+            }
+        }
+
+        /* Media Query: Resolución de pantalla */
+        @media screen and (min-resolution: 300dpi) {
+            body {
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+
+        /* Media Query: Color vs Blanco y Negro */
+        @media screen and (min-color-index: 0) {
+            body {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejemplo de Media Queries</h1>
+        <div class="responsive-layout">
+            <div class="column">
+                <h2>Columna 1</h2>
+                <p>Contenido responsivo para diferentes dispositivos</p>
+            </div>
+            <div class="column hide-mobile">
+                <h2>Columna 2</h2>
+                <p>Oculta en dispositivos móviles</p>
+            </div>
+            <div class="column">
+                <h2>Columna 3</h2>
+                <p>Adaptable a diferentes tamaños de pantalla</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Media Queries</title>
+    <style>
+        /* Estilos base para todos los dispositivos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* Media Query para pantallas pequeñas (móviles) */
+        /* Se aplicará cuando el ancho de la pantalla sea 600px o menos */
+        @media screen and (max-width: 600px) {
+            /* Cambios específicos para dispositivos móviles */
+            body {
+                background-color: #e0e0e0;
+                padding: 10px;
+            }
+
+            .contenedor {
+                width: 100%; /* Ancho completo en móviles */
+                padding: 10px;
+            }
+        }
+
+        /* Media Query para pantallas medianas (tablets) */
+        /* Se aplicará cuando el ancho de la pantalla esté entre 601px y 1024px */
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            /* Cambios específicos para tablets */
+            .contenedor {
+                width: 90%; /* Ancho reducido */
+                background-color: #f5f5f5;
+            }
+        }
+
+        /* Media Query para pantallas grandes (escritorio) */
+        /* Se aplicará cuando el ancho de la pantalla sea mayor a 1024px */
+        @media screen and (min-width: 1025px) {
+            /* Cambios específicos para escritorio */
+            .contenedor {
+                max-width: 1000px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Media Queries Ejemplo</h1>
+        <p>Redimensiona la ventana para ver los cambios de diseño.</p>
+    </div>
+</body>
+</html>

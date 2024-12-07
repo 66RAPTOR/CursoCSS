@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries Ejemplo</title>
+  <style>
+    /* Estilos globales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4; /* Fondo claro por defecto */
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; /* Permite que los elementos se ajusten en dispositivos pequeños */
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 30%; /* Ancho predeterminado para pantallas grandes */
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* Efecto al pasar el mouse */
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .card {
+        width: 45%; /* Ajusta el ancho al 45% para pantallas medianas */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 100%; /* Ocupa todo el ancho para pantallas pequeñas */
+      }
+
+      header {
+        font-size: 1.2rem; /* Reduce el tamaño del texto en el header */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ejemplo de Media Queries</h1>
+  </header>
+  <main>
+    <div class="card">Contenido 1</div>
+    <div class="card">Contenido 2</div>
+    <div class="card">Contenido 3</div>
+  </main>
+</body>
+</html>

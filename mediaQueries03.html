@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries Ejemplo</title>
+  <style>
+    /* Estilos globales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff0000; /* Fondo claro por defecto */
+    }
+
+    /* Media Queries */
+    @media  (max-width: 200px) {
+      body{
+        background-color: rgb(252, 141, 15);
+      }
+    }
+
+    @media (min-width: 201px) and (max-width: 500px) {
+      body{
+        background-color: rgb(252, 255, 50);
+      }
+    }
+    @media screen and (min-width:501px) and (max-width:700px) {
+      body{
+        background-color: rgb(37, 194, 5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ejemplo de Media Queries</h1>
+  </header>
+  </main>
+</body>
+</html>
