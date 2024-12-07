@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máscaras en CSS</title>
+    <style>
+      /* Fondo general de la página */
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Altura completa del viewport */
+        background: linear-gradient(
+          120deg,
+          #ff9a9e,
+          #fad0c4,
+          #fbc2eb
+        ); /* Fondo degradado */
+      }
+
+      .element {
+        width: 600px;
+        height: 400px;
+        background: url("img/perfil.jpeg") left / cover;
+        mask-image: radial-gradient(
+          circle 250px at 40% 50%,
+          black 75%,
+          transparent 76%
+        );
+
+        &:hover {
+          mask-image: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://lenguajecss.com/css/mascaras-y-recortes/mask-image/ -->
+    <div class="element"></div>
+  </body>
+</html>

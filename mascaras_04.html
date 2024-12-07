@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos de Desvanecimiento con Máscaras CSS</title>
+    <style>
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Estilos base para todas las imágenes */
+        .fade-image {
+            width: 300px;
+            height: 300px;
+            /* background-image: url('https://picsum.photos/300/300'); */
+            background-image: url('img/gato_01.webp');
+
+            background-size: cover;
+            margin: 10px;
+        }
+
+        /* 1. Fade Bottom - Desvanecimiento hacia abajo */
+        .fade-bottom {
+            
+            -webkit-mask-image: linear-gradient(to bottom, 
+                black 90%, /* Mantiene el 50% superior totalmente visible */
+                transparent 100% /* Se desvanece en el 50% inferior */
+            );
+            mask-image: linear-gradient(to bottom, 
+                black 50%, 
+                transparent 100%
+            );
+        }
+
+        /* 2. Fade Top - Desvanecimiento hacia arriba */
+        .fade-top {
+            -webkit-mask-image: linear-gradient(to top, 
+                black 50%, 
+                transparent 100%
+            );
+            mask-image: linear-gradient(to top, 
+                black 50%, 
+                transparent 100%
+            );
+        }
+
+        /* 3. Fade Dual - Desvanecimiento en ambos extremos */
+        .fade-dual {
+            -webkit-mask-image: linear-gradient(to bottom, 
+                transparent 0%, /* Comienza transparente */
+                black 20%,     /* Se vuelve visible */
+                black 80%,     /* Mantiene visibilidad */
+                transparent 100% /* Termina transparente */
+            );
+            mask-image: linear-gradient(to bottom, 
+                transparent 0%, 
+                black 20%, 
+                black 80%, 
+                transparent 100%
+            );
+        }
+
+        /* 4. Fade Center - Desvanecimiento desde el centro */
+        .fade-center {
+            -webkit-mask-image: radial-gradient(
+                circle at center,
+                black 30%,    /* Centro visible */
+                transparent 70% /* Se desvanece hacia los bordes */
+            );
+            mask-image: radial-gradient(
+                circle at center,
+                black 30%,
+                transparent 70%
+            );
+        }
+
+        /* 5. Fade Left to Right - Desvanecimiento de izquierda a derecha */
+        .fade-left-right {
+            -webkit-mask-image: linear-gradient(to right,
+                black 0%,
+                black 50%,
+                transparent 100%
+            );
+            mask-image: linear-gradient(to right,
+                black 0%,
+                black 50%,
+                transparent 100%
+            );
+        }
+
+        /* 6. Fade Diagonal - Desvanecimiento diagonal */
+        .fade-diagonal {
+            -webkit-mask-image: linear-gradient(45deg,
+                black 0%,
+                black 50%,
+                transparent 100%
+            );
+            mask-image: linear-gradient(45deg,
+                black 0%,
+                black 50%,
+                transparent 100%
+            );
+        }
+
+        /* Estilo para las etiquetas */
+        .effect-label {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Contenedor para cada ejemplo */
+        .effect-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Fade Bottom -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Bottom</h3>
+            <div class="fade-image fade-bottom"></div>
+        </div>
+
+        <!-- Fade Top -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Top</h3>
+            <div class="fade-image fade-top"></div>
+        </div>
+
+        <!-- Fade Dual -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Dual</h3>
+            <div class="fade-image fade-dual"></div>
+        </div>
+
+        <!-- Fade Center -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Center</h3>
+            <div class="fade-image fade-center"></div>
+        </div>
+
+        <!-- Fade Left to Right -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Left to Right</h3>
+            <div class="fade-image fade-left-right"></div>
+        </div>
+
+        <!-- Fade Diagonal -->
+        <div class="effect-container">
+            <h3 class="effect-label">Fade Diagonal</h3>
+            <div class="fade-image fade-diagonal"></div>
+        </div>
+    </div>
+</body>
+</html>

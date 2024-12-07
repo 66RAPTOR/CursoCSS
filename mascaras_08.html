@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos de Máscara Simple</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ff6b6b;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto 1: Círculo que se expande */
+        .circle-mask {
+            -webkit-mask: radial-gradient(circle at center, black 0%, black 30%, transparent 60%);
+            mask: radial-gradient(circle at center, black 0%, black 30%, transparent 60%);
+        }
+
+        .circle-mask:hover {
+            -webkit-mask: radial-gradient(circle at center, black 0%, black 70%, transparent 100%);
+            mask: radial-gradient(circle at center, black 0%, black 70%, transparent 100%);
+        }
+
+        /* Efecto 2: Degradado horizontal */
+        .gradient-mask {
+            -webkit-mask: linear-gradient(to right, transparent, black);
+            mask: linear-gradient(to right, transparent, black);
+        }
+
+        .gradient-mask:hover {
+            -webkit-mask: linear-gradient(to left, transparent, black);
+            mask: linear-gradient(to left, transparent, black);
+        }
+
+        /* Efecto 3: Barras verticales */
+        .stripes-mask {
+            -webkit-mask: repeating-linear-gradient(to right, 
+                black 0px, black 20px, 
+                transparent 20px, transparent 40px);
+            mask: repeating-linear-gradient(to right, 
+                black 0px, black 20px, 
+                transparent 20px, transparent 40px);
+        }
+
+        .stripes-mask:hover {
+            -webkit-mask: repeating-linear-gradient(to right, 
+                black 0px, black 30px, 
+                transparent 30px, transparent 60px);
+            mask: repeating-linear-gradient(to right, 
+                black 0px, black 30px, 
+                transparent 30px, transparent 60px);
+        }
+
+        /* Efecto 4: Diamante */
+        .diamond-mask {
+            -webkit-mask: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            mask: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: scale(0.8);
+        }
+
+        .diamond-mask:hover {
+            transform: scale(1);
+        }
+
+        /* Título para cada efecto */
+        .effect-container {
+            text-align: center;
+        }
+
+        h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Efecto 1 -->
+        <div class="effect-container">
+            <h3>Círculo Expansivo</h3>
+            <div class="box circle-mask"></div>
+        </div>
+
+        <!-- Efecto 2 -->
+        <div class="effect-container">
+            <h3>Degradado Horizontal</h3>
+            <div class="box gradient-mask"></div>
+        </div>
+
+        <!-- Efecto 3 -->
+        <div class="effect-container">
+            <h3>Barras Verticales</h3>
+            <div class="box stripes-mask"></div>
+        </div>
+
+        <!-- Efecto 4 -->
+        <div class="effect-container">
+            <h3>Forma de Diamante</h3>
+            <div class="box diamond-mask"></div>
+        </div>
+    </div>
+</body>
+</html>

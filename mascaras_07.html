@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos Complejos con Máscaras CSS</title>
+    <style>
+        /* Estilos base */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1a;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+        }
+
+        /* Contenedor base para cada efecto */
+        .mask-container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Títulos de los efectos */
+        .effect-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            z-index: 2;
+            font-size: 1.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 1. Efecto de revelación dual */
+        .dual-reveal {
+            background-image: url('https://picsum.photos/400/300');
+            background-size: cover;
+            transition: all 0.5s ease;
+        }
+
+        .dual-reveal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            -webkit-mask: 
+                radial-gradient(circle at 50% 50%, transparent 0%, black 50%) center/200% 200%,
+                linear-gradient(45deg, black 40%, transparent 60%) center/200% 200%;
+            mask: 
+                radial-gradient(circle at 50% 50%, transparent 0%, black 50%) center/200% 200%,
+                linear-gradient(45deg, black 40%, transparent 60%) center/200% 200%;
+            transition: all 0.5s ease;
+        }
+
+        .dual-reveal:hover::before {
+            -webkit-mask-size: 100% 100%, 100% 100%;
+            mask-size: 100% 100%, 100% 100%;
+        }
+
+        /* 2. Efecto de patrón animado */
+        .animated-pattern {
+            background-image: url('https://picsum.photos/400/301');
+            background-size: cover;
+        }
+
+        .animated-pattern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            -webkit-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJibGFjayIvPjwvc3ZnPg==');
+            mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJibGFjayIvPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSJibGFjayIvPjwvc3ZnPg==');
+            -webkit-mask-size: 40px 40px;
+            mask-size: 40px 40px;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .animated-pattern:hover::before {
+            opacity: 1;
+        }
+
+        /* 3. Efecto de transición multicapa */
+        .multi-layer {
+            background-image: url('https://picsum.photos/400/302');
+            background-size: cover;
+        }
+
+        .multi-layer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            -webkit-mask: 
+                linear-gradient(black, transparent),
+                radial-gradient(circle at 50% 50%, black 30%, transparent 70%);
+            mask: 
+                linear-gradient(black, transparent),
+                radial-gradient(circle at 50% 50%, black 30%, transparent 70%);
+            -webkit-mask-size: 100% 100%, 200% 200%;
+            mask-size: 100% 100%, 200% 200%;
+            -webkit-mask-position: 0 0, 100% 100%;
+            mask-position: 0 0, 100% 100%;
+            -webkit-mask-composite: source-over;
+            mask-composite: add;
+            transition: all 0.5s ease;
+        }
+
+        .multi-layer:hover::before {
+            -webkit-mask-position: 0 0, 50% 50%;
+            mask-position: 0 0, 50% 50%;
+        }
+
+        /* 4. Efecto de texto revelado */
+        .text-reveal {
+            background-image: url('https://picsum.photos/400/303');
+            background-size: cover;
+            position: relative;
+        }
+
+        .text-reveal::before {
+            content: 'HOVER ME';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            font-size: 3em;
+            font-weight: bold;
+            -webkit-mask: 
+                linear-gradient(black, black) text,
+                linear-gradient(transparent, transparent);
+            mask: 
+                linear-gradient(black, black) text,
+                linear-gradient(transparent, transparent);
+            -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+            transition: all 0.5s ease;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .text-reveal:hover::before {
+            color: white;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Efecto de revelación dual -->
+        <div class="mask-container dual-reveal">
+            <span class="effect-title">Revelación Dual</span>
+        </div>
+
+        <!-- Efecto de patrón animado -->
+        <div class="mask-container animated-pattern">
+            <span class="effect-title">Patrón Animado</span>
+        </div>
+
+        <!-- Efecto de transición multicapa -->
+        <div class="mask-container multi-layer">
+            <span class="effect-title">Transición Multicapa</span>
+        </div>
+
+        <!-- Efecto de texto revelado -->
+        <div class="mask-container text-reveal">
+            <span class="effect-title">Texto Revelado</span>
+        </div>
+    </div>
+</body>
+</html>

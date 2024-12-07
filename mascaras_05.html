@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máscaras CSS con Imágenes</title>
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Estilos base para todas las imágenes enmascaradas */
+        .masked-image {
+            width: 300px;
+            height: 300px;
+            background-image: url('https://picsum.photos/300/300');
+            background-size: cover;
+            margin: 10px;
+        }
+
+        /* 1. Máscara con imagen PNG básica */
+        .mask-with-png {
+            -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjEwMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4=');
+            mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjEwMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4=');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
+        /* 2. Máscara con patrón repetido */
+        .mask-pattern {
+            -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMTAiIGZpbGw9ImJsYWNrIi8+PC9zdmc+');
+            mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMTAiIGZpbGw9ImJsYWNrIi8+PC9zdmc+');
+            -webkit-mask-size: 50px 50px;
+            mask-size: 50px 50px;
+            -webkit-mask-repeat: repeat;
+            mask-repeat: repeat;
+        }
+
+        /* 3. Combinación de imagen y gradiente */
+        .mask-combined {
+            -webkit-mask: 
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjEwMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4=') center/contain no-repeat,
+                linear-gradient(to bottom, black, transparent);
+            mask: 
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjEwMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4=') center/contain no-repeat,
+                linear-gradient(to bottom, black, transparent);
+            -webkit-mask-composite: intersect;
+            mask-composite: intersect;
+        }
+
+        /* Estilo para las etiquetas */
+        .effect-label {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .effect-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Máscara con PNG -->
+        <div class="effect-container">
+            <h3 class="effect-label">Máscara con PNG</h3>
+            <div class="masked-image mask-with-png"></div>
+        </div>
+
+        <!-- Máscara con Patrón -->
+        <div class="effect-container">
+            <h3 class="effect-label">Máscara con Patrón</h3>
+            <div class="masked-image mask-pattern"></div>
+        </div>
+
+        <!-- Máscara Combinada -->
+        <div class="effect-container">
+            <h3 class="effect-label">Máscara Combinada</h3>
+            <div class="masked-image mask-combined"></div>
+        </div>
+    </div>
+</body>
+</html>

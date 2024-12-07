@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máscaras en CSS</title>
+    <style>
+      /* Fondo general de la página */
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Altura completa del viewport */
+        background: linear-gradient(
+          135deg,
+          #ff9a9e,
+          #fad0c4,
+          #fbc2eb
+        ); /* Fondo degradado */
+      }
+
+      .element {
+        width: 600px;
+        height: 400px;
+        background: url("img/gato_01.webp") left / cover;
+        mask-image: radial-gradient(
+            circle 250px at 40% 50%,
+            black 75%,
+            transparent 76%
+          ),
+          radial-gradient(circle 250px at 40% 50%, black 75%, transparent 76%);
+        mask-origin: padding-box, content-box;
+        mask-repeat: no-repeat;
+        mask-composite: exclude, add; /* Ver más adelante */
+        padding: 6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element"></div>
+
+  </body>
+</html>

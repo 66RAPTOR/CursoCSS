@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Máscaras CSS</title>
+    <style>
+        /* Estilos generales para contenedor */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Ejemplo 1: Máscara con degradado */
+        .mask-gradient {
+            width: 300px;
+            height: 300px;
+            background-image: url('img/gato_01.webp');
+            /* Aplicamos un degradado como máscara */
+            -webkit-mask-image: linear-gradient(to bottom, rgb(167, 75, 75), transparent);
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+
+        /* Ejemplo 2: Máscara con imagen PNG */
+        .mask-image {
+            width: 300px;
+            height: 300px;
+            background-color: #4CAF50;
+            /* Usamos una imagen PNG como máscara */
+            -webkit-mask-image: url('img/gato_01.webp');
+            mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iYmxhY2siLz48L3N2Zz4=');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+
+        /* Ejemplo 3: Máscara con múltiples valores */
+        .mask-complex {
+            width: 300px;
+            height: 300px;
+            background-image: url('https://picsum.photos/300/300');
+            /* Combinamos múltiples máscaras */
+            -webkit-mask: 
+                linear-gradient(to right, transparent 25%, black 25%, black 75%, transparent 75%),
+                linear-gradient(to bottom, transparent 25%, black 25%, black 75%, transparent 75%);
+            mask: 
+                linear-gradient(to right, transparent 25%, black 25%, black 75%, transparent 75%),
+                linear-gradient(to bottom, transparent 25%, black 25%, black 75%, transparent 75%);
+            -webkit-mask-composite: intersect;
+            mask-composite: intersect;
+        }
+
+        /* Espaciado entre ejemplos */
+        .example {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Ejemplo 1: Máscara con degradado -->
+        <div class="example">
+            <h2>Máscara con Degradado</h2>
+            <div class="mask-gradient"></div>
+        </div>
+
+        <!-- Ejemplo 2: Máscara con imagen PNG -->
+        <div class="example">
+            <h2>Máscara con Imagen</h2>
+            <div class="mask-image"></div>
+        </div>
+
+        <!-- Ejemplo 3: Máscara compleja -->
+        <div class="example">
+            <h2>Máscara Compleja</h2>
+            <div class="mask-complex"></div>
+        </div>
+    </div>
+</body>
+</html>

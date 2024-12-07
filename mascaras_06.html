@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máscaras CSS con Imágenes</title>
+    <style>
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .element {
+        width: 600px;
+        height: 400px;
+        background: url("img/gato_01.webp") left / cover;
+        mask-image: radial-gradient(
+          circle 250px at 40% 50%,
+          black 75%,
+          transparent 76%
+        );
+        mask-position: 1px 0px;
+        transition: 4s;
+
+        &:hover {
+            mask-position: 160px 200px;
+            transition: 4s;
+            mask-repeat: no-repeat;
+          
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="element"></div>
+    </div>
+  </body>
+</html>
