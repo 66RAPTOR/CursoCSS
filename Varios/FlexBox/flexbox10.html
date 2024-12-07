@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario con Animaciones</title>
+  <style>
+    /* Estilo general para la página */
+    body {
+      margin: 0; /* Elimina márgenes predeterminados */
+      font-family: Arial, sans-serif; /* Fuente moderna */
+      background-color: #f4f4f9; /* Fondo claro para contraste */
+    }
+
+    /* Animación de entrada para el contenido */
+    @keyframes fadeIn {
+      from {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(20px); /* Desplazado hacia abajo */
+      }
+      to {
+        opacity: 1; /* Totalmente visible */
+        transform: translateY(0); /* Posición normal */
+      }
+    }
+
+    /* Contenedor principal del perfil */
+    .profile-container {
+      display: flex; /* Flexbox para organizar las secciones */
+      flex-wrap: wrap; /* Permite reorganización en pantallas pequeñas */
+      max-width: 1200px; /* Ancho máximo del contenido */
+      margin: 20px auto; /* Centrado horizontal y margen superior/inferior */
+      gap: 20px; /* Espacio entre las secciones */
+      padding: 20px; /* Espaciado interno */
+      background-color: white; /* Fondo blanco para destacar */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+      animation: fadeIn 1s ease-in-out; /* Animación de entrada suave */
+    }
+
+    /* Sección lateral: foto de perfil y estadísticas */
+    .profile-sidebar {
+      flex: 1 1 300px; /* Flexible pero con un mínimo de 300px */
+      max-width: 300px; /* Ancho máximo fijo */
+      display: flex; /* Flexbox para alinear elementos */
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center; /* Centra los elementos horizontalmente */
+      padding: 20px; /* Espaciado interno */
+      border-right: 1px solid #ddd; /* Línea divisoria a la derecha */
+    }
+
+    /* Estilo de la foto de perfil */
+    .profile-sidebar img {
+      width: 150px; /* Ancho fijo */
+      height: 150px; /* Altura fija */
+      border-radius: 50%; /* Forma circular */
+      border: 4px solid #4CAF50; /* Borde verde */
+      object-fit: cover; /* Asegura que la imagen no se deforme */
+      margin-bottom: 15px; /* Espaciado inferior */
+      animation: fadeIn 1.5s ease-in-out; /* Animación más tardía */
+    }
+
+    /* Nombre del usuario */
+    .profile-sidebar h2 {
+      margin: 10px 0; /* Espaciado vertical */
+      color: #333; /* Color oscuro */
+    }
+
+    /* Contenedor de estadísticas */
+    .profile-sidebar .stats {
+      display: flex; /* Flexbox para organizar las estadísticas en fila */
+      gap: 15px; /* Espaciado entre estadísticas */
+      margin-top: 20px; /* Separación superior */
+    }
+
+    /* Estilo individual para cada estadística */
+    .profile-sidebar .stats .stat {
+      text-align: center; /* Texto centrado */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza animaciones */
+    }
+
+    /* Efecto al pasar el mouse sobre una estadística */
+    .profile-sidebar .stats .stat:hover {
+      transform: scale(1.1); /* Incrementa el tamaño ligeramente */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+    }
+
+    /* Texto numérico grande */
+    .profile-sidebar .stats .stat h3 {
+      margin: 0; /* Sin margen */
+      font-size: 1.5rem; /* Tamaño de fuente grande */
+      color: #4CAF50; /* Color verde */
+    }
+
+    /* Sección principal: actividades recientes */
+    .profile-main {
+      flex: 2 1 600px; /* Más espacio para esta sección */
+      max-width: 100%; /* Ocupa todo el espacio posible */
+      padding: 20px; /* Espaciado interno */
+    }
+
+    /* Título de la sección de actividades */
+    .profile-main h3 {
+      margin-bottom: 15px; /* Espaciado inferior */
+      color: #333; /* Color oscuro */
+    }
+
+    /* Estilo para cada actividad */
+    .activity {
+      display: flex; /* Flexbox para alinear imagen y texto */
+      align-items: center; /* Centra verticalmente */
+      gap: 15px; /* Espaciado entre elementos */
+      padding: 10px 0; /* Espaciado interno vertical */
+      border-bottom: 1px solid #ddd; /* Línea divisoria */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos suaves */
+    }
+
+    /* Quita la línea divisoria en la última actividad */
+    .activity:last-child {
+      border-bottom: none;
+    }
+
+    /* Efecto hover en cada actividad */
+    .activity:hover {
+      background-color: #f0f9f0; /* Cambia el fondo a verde claro */
+      transform: translateX(10px); /* Desplaza ligeramente a la derecha */
+    }
+
+    /* Imagen en cada actividad */
+    .activity img {
+      width: 50px; /* Tamaño pequeño */
+      height: 50px; /* Tamaño pequeño */
+      border-radius: 50%; /* Forma circular */
+      object-fit: cover; /* Mantiene proporciones */
+      animation: fadeIn 2s ease-in-out; /* Animación de entrada */
+    }
+
+    /* Contenedor de texto en las actividades */
+    .activity .activity-info {
+      flex: 1; /* Ocupa el espacio restante */
+    }
+
+    /* Nombre del evento en la actividad */
+    .activity .activity-info h4 {
+      margin: 0; /* Sin margen */
+      font-size: 1rem; /* Tamaño estándar */
+      color: #333; /* Color oscuro */
+    }
+
+    /* Detalles adicionales en la actividad */
+    .activity .activity-info p {
+      margin: 5px 0 0; /* Espaciado superior */
+      font-size: 0.9rem; /* Tamaño más pequeño */
+      color: #666; /* Color gris */
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Sección lateral: Foto de perfil y estadísticas -->
+    <div class="profile-sidebar">
+      <img src="https://via.placeholder.com/150" alt="Foto de perfil">
+      <h2>Ricardo Martínez</h2>
+      <p>Desarrollador Web</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>150</h3>
+          <p>Posts</p>
+        </div>
+        <div class="stat">
+          <h3>300</h3>
+          <p>Seguidores</p>
+        </div>
+        <div class="stat">
+          <h3>180</h3>
+          <p>Siguiendo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección principal: Actividades recientes -->
+    <div class="profile-main">
+      <h3>Actividades Recientes</h3>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Juan Pérez comentó tu post</h4>
+          <p>Hace 5 minutos</p>
+        </div>
+      </div>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Ana López empezó a seguirte</h4>
+          <p>Hace 10 minutos</p>
+        </div>
+      </div>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Roberto subió una nueva foto</h4>
+          <p>Hace 20 minutos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

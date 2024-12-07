@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox: Tarjetas de Productos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+    /* Contenedor de las tarjetas */
+    .card-container {
+      display: flex; /* Activa Flexbox */
+      flex-wrap: wrap; /* Ajusta las tarjetas en múltiples líneas si es necesario */
+      justify-content: center; /* Centra las tarjetas horizontalmente */
+      gap: 20px; /* Espacio entre las tarjetas */
+      padding: 20px;
+    }
+
+    /* Estilo de cada tarjeta */
+    .card {
+      background-color: white; /* Fondo blanco */
+      border: 1px solid #ddd; /* Borde gris claro */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+      padding: 20px;
+      width: 300px; /* Ancho fijo */
+      text-align: center; /* Centra el texto */
+    }
+
+    .card img {
+      max-width: 100%; /* La imagen no excede el ancho de la tarjeta */
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #666; /* Texto gris */
+      font-size: 0.9rem;
+    }
+
+    .card button {
+      background-color: #4CAF50; /* Botón verde */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #45a049; /* Verde más oscuro */
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Producto 1">
+      <h3>Producto 1</h3>
+      <p>Descripción breve del producto.</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Producto 2">
+      <h3>Producto 2</h3>
+      <p>Descripción breve del producto.</p>
+      <button>Comprar</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Producto 3">
+      <h3>Producto 3</h3>
+      <p>Descripción breve del producto.</p>
+      <button>Comprar</button>
+    </div>
+  </div>
+</body>
+</html>
+

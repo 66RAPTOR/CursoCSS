@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario con Flexbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+    }
+
+    /* Contenedor principal */
+    .profile-container {
+      display: flex;
+      flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas pequeñas */
+      max-width: 1200px;
+      margin: 20px auto;
+      gap: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sección de la foto y estadísticas */
+    .profile-sidebar {
+      flex: 1 1 300px; /* Tamaño flexible pero con un mínimo */
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .profile-sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #4CAF50;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .profile-sidebar h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .profile-sidebar .stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .profile-sidebar .stats .stat {
+      text-align: center;
+    }
+
+    .profile-sidebar .stats .stat h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #4CAF50;
+    }
+
+    /* Sección de actividades */
+    .profile-main {
+      flex: 2 1 600px; /* Más espacio para la sección principal */
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .profile-main h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .activity {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .activity:last-child {
+      border-bottom: none;
+    }
+
+    .activity img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .activity .activity-info {
+      flex: 1;
+    }
+
+    .activity .activity-info h4 {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .activity .activity-info p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Sidebar: Foto y estadísticas -->
+    <div class="profile-sidebar">
+      <img src="img/perfil.jpeg" alt="Foto de perfil">
+      <h2>Ricardo Martínez</h2>
+      <p>Desarrollador Web</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>150</h3>
+          <p>Posts</p>
+        </div>
+        <div class="stat">
+          <h3>300</h3>
+          <p>Seguidores</p>
+        </div>
+        <div class="stat">
+          <h3>180</h3>
+          <p>Siguiendo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección principal: Actividades recientes -->
+    <div class="profile-main">
+      <h3>Actividades Recientes</h3>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Juan Pérez comentó tu post</h4>
+          <p>Hace 5 minutos</p>
+        </div>
+      </div>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Ana López empezó a seguirte</h4>
+          <p>Hace 10 minutos</p>
+        </div>
+      </div>
+      <div class="activity">
+        <img src="https://via.placeholder.com/50" alt="Usuario">
+        <div class="activity-info">
+          <h4>Roberto subió una nueva foto</h4>
+          <p>Hace 20 minutos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

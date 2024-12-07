@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox: Galería Mejorada</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Contenedor de la galería */
+    .gallery-container {
+      display: flex; /* Activa Flexbox */
+      flex-wrap: wrap; /* Ajusta las imágenes a nuevas filas */
+      gap: 20px; /* Espacio entre las tarjetas */
+      padding: 20px;
+      background-color: #fafafa;
+    }
+
+    /* Cada tarjeta */
+    .gallery-item {
+      flex: 1 1 calc(33.333% - 20px); /* Tamaño flexible para 3 columnas */
+      max-width: calc(33.333% - 20px); /* Limita el ancho */
+      background-color: white; /* Fondo blanco */
+      border-radius: 10px; /* Bordes redondeados */
+      overflow: hidden; /* Oculta los bordes sobrantes */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+      display: flex; /* Flexbox dentro de la tarjeta */
+      flex-direction: column; /* Acomoda los elementos verticalmente */
+    }
+
+    /* Imagen dentro de la tarjeta */
+    .gallery-item img {
+      width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+      height: auto; /* Mantiene la proporción */
+    }
+
+    /* Contenido de la tarjeta */
+    .gallery-content {
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Responsivo: dos columnas en pantallas medianas */
+    @media (max-width: 768px) {
+      .gallery-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    /* Una columna en pantallas pequeñas */
+    @media (max-width: 480px) {
+      .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="img/arbol-solitario.jpg" alt="Imagen 1">
+      <div class="gallery-content">
+        <h3>Título 1</h3>
+        <p>Descripción breve del contenido.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="img/compu.jpg" alt="Imagen 2">
+      <div class="gallery-content">
+        <h3>Título 2</h3>
+        <p>Descripción breve del contenido.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://via.placeholder.com/300" alt="Imagen 3">
+      <div class="gallery-content">
+        <h3>Título 3</h3>
+        <p>Descripción breve del contenido.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

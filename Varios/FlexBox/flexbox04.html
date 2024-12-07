@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox: Botones Centrados</title>
+  <style>
+    /* Contenedor principal */
+    .center-container {
+      display: flex; /* Activa Flexbox */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 100vh; /* Ocupa toda la altura de la ventana */
+      background-color: #f0f0f0; /* Fondo gris claro */
+    }
+
+    /* Botones */
+    .btn {
+      padding: 10px 20px; /* Espaciado interno */
+      margin: 5px; /* Espaciado externo entre botones */
+      font-size: 1rem; /* Tamaño de texto */
+      border: none; /* Sin bordes */
+      border-radius: 5px; /* Bordes redondeados */
+      cursor: pointer; /* Cambia el cursor a una mano */
+      transition: background-color 0.3s; /* Efecto suave */
+    }
+
+    .btn-primary {
+      background-color: #007bff; /* Azul */
+      color: white; /* Texto blanco */
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3; /* Azul oscuro */
+    }
+
+    .btn-secondary {
+      background-color: #6c757d; /* Gris oscuro */
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-container">
+    <button class="btn btn-primary">Aceptar</button>
+    <button class="btn btn-secondary">Cancelar</button>
+    
+  </div>
+</body>
+</html>

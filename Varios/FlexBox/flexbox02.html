@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox: Menú de Navegación</title>
+  <style>
+    /* Estilo general */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Contenedor del menú */
+    .nav-container {
+      display: flex; /* Activa Flexbox */
+      flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+      justify-content: space-between; /* Espacio entre los ítems */
+      align-items: center; /* Centra verticalmente los ítems */
+      background-color: #333; /* Fondo oscuro */
+      padding: 10px;
+    }
+
+    /* Ítems del menú */
+    .nav-item {
+      color: white; /* Texto blanco */
+      text-decoration: none; /* Sin subrayado */
+      padding: 10px 15px; /* Espaciado interno */
+      border-radius: 5px; /* Bordes redondeados */
+      transition: background-color 0.3s; /* Efecto suave al pasar el cursor */
+    }
+
+    /* Efecto hover */
+    .nav-item:hover {
+      background-color: #575757;
+    }
+
+    /* Responsivo: menú vertical en pantallas pequeñas */
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column; /* Cambia el eje principal a vertical */
+        align-items: flex-start; /* Alinea al inicio en el eje cruzado */
+      }
+
+      .nav-item {
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center; /* Centra el texto */
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-container">
+    <a href="#" class="nav-item">Inicio</a>
+    <a href="#" class="nav-item">Servicios</a>
+    <a href="#" class="nav-item">Nosotros</a>
+    <a href="#" class="nav-item">Contacto</a>
+  </nav>
+</body>
+</html>
