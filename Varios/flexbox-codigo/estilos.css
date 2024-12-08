@@ -1,0 +1,167 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root{
+	--widthCard:33.33%;
+
+	--widthContenedorConcierto:70%;
+	--widthBanner:30%;
+	--widthGap:15px;
+
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	/* max-width: 1200px; */
+	margin: auto;
+	padding: 20px 0;
+
+	display: flex;
+	gap: 20PX;
+	/* background-color: #ffc905; */
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+
+	width: var(--widthContenedorConcierto);
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+
+	/* codigo flexbox */
+	width: calc(var(--widthCard) - var(--widthGap))
+}
+
+.card .textos {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+
+
+}
+
+.card .textos .p {
+	justify-content: flex-end;
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+
+	/* codigo flexbox */
+	width: var(--widthBanner);
+	min-width: 280px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1920px) {
+	.contenedor {
+		width: 98%;
+	}
+
+	:root{
+		--widthCard:15.9%;
+
+		--widthContenedorConcierto:85%;
+		--widthBanner:15%;
+
+		--widthGap:1px;
+	};
+
+
+}
+
+@media screen and (max-width: 1366px) {
+	:root{
+		--widthCard:18.92%;
+
+		--widthContenedorConcierto:80%;
+		--widthBanner:20%;
+	};
+}
+
+@media screen and (max-width: 1200px) {
+	:root{
+		--widthCard:45%;
+
+		--widthContenedorConcierto:80%;
+		--widthBanner:20%;
+	};
+}
+
+@media screen and (max-width: 450px) {
+	:root{
+		--widthCard:100%;
+
+		--widthContenedorConcierto:100%;
+		--widthBanner:100%;
+
+		--widthGap:0px;
+	};
+
+	.contenedor{
+		width: 80%;
+
+		flex-direction: column;
+		justify-content: center;
+ 		align-items: center;
+		
+	}
+}
